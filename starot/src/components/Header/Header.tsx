@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <nav className='bg-transparent border-gray-200 dark:bg-gray-900 relative'>
       <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
-        <Link to='https://flowbite.com/' className='flex items-center space-x-3 rtl:space-x-reverse'>
+        <Link to='/' className='flex items-center space-x-3 rtl:space-x-reverse'>
           <img
             src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FLogoFullSize.png?alt=media&token=2829f02a-01bd-431e-bce1-9451b83b6272'
             className='h-8'
@@ -46,7 +46,7 @@ export default function Header() {
           <ul className='font-medium flex flex-col p-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700'>
             <li>
               <Link
-                to='#'
+                to='https://www.apple.com/vn/app-store/'
                 className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
                 aria-current='page'
               >
@@ -55,7 +55,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                to='#'
+                to='https://play.google.com/store/games?device=windows&utm_source=apac_med&hl=vi-VN&utm_medium=hasem&utm_content=Jan0324&utm_campaign=Evergreen&pcampaignid=MKT-EDR-apac-vn-1707570-med-hasem-py-Evergreen-Jan0324-Text_Search_BKWS-BKWS%7CONSEM_kwid_43700078803271722_creativeid_694706148392_device_c&gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH50GILv7Bu8ivLdr6tACLTZMHOSUN1jOodXaFX3w5gUOKpWq5fWzArUaAuwcEALw_wcB&gclsrc=aw.ds&pli=1'
                 className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
               >
                 DOWNLOAD ANDROID
@@ -89,14 +89,14 @@ export default function Header() {
         </div>
         <div className='hidden md:flex md:space-x-8'>
           <Link
-            to='#'
+            to='https://www.apple.com/vn/app-store/'
             className='block py-2 px-3 text-blue rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500'
             aria-current='page'
           >
             DOWNLOAD IOS
           </Link>
           <Link
-            to='#'
+            to='https://play.google.com/store/games?device=windows&utm_source=apac_med&hl=vi-VN&utm_medium=hasem&utm_content=Jan0324&utm_campaign=Evergreen&pcampaignid=MKT-EDR-apac-vn-1707570-med-hasem-py-Evergreen-Jan0324-Text_Search_BKWS-BKWS%7CONSEM_kwid_43700078803271722_creativeid_694706148392_device_c&gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH50GILv7Bu8ivLdr6tACLTZMHOSUN1jOodXaFX3w5gUOKpWq5fWzArUaAuwcEALw_wcB&gclsrc=aw.ds&pli=1'
             className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
           >
             DOWNLOAD ANDROID
