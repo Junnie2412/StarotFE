@@ -2,7 +2,15 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        'Space Grotesk': ['Space Grotesk', 'sans-serif']
+      },
+      colors: {
+        blue: '#3014BA',
+        'blue-light': '#392C7A'
+      }
+    }
   },
   plugins: []
 }
