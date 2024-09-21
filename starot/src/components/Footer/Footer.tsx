@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 export default function Footer() {
   return (
     <div className='flex flex-wrap md:flex-nowrap md:px-10'>
-      <div className='w-full md:w-4/5 px-10'>
+      <div className='w-full md:w-4/5 px-5'>
         <div className=''>
           <Link to='/' className='flex items-center space-x-3 rtl:space-x-reverse'>
             <img
@@ -17,7 +17,7 @@ export default function Footer() {
 
       <div className='hidden md:block w-full md:w-1/10 p-4'></div>
 
-      <div className='w-full md:w-1/10 px-10'>
+      <div className='w-full md:w-1/10 px-5'>
         <div className=' h-40 flex items-center justify-center rounded-md'>
           <div className='w-full flex flex-row'>
             <div className='bg-blue-200  mr-2 rounded-md w-1/2'>

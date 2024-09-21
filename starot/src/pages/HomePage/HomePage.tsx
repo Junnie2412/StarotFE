@@ -237,7 +237,7 @@ export default function HomePage() {
           <div className='w-full sm:w-1/4 p-4'>
             <div className=' h-100 flex items-center justify-center rounded-md'>
               <img
-                src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FRhodochrosite.png?alt=media&token=7019ec29-9a01-49f8-8208-9931d19d67f9'
+                src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FRhodochrosite.png?alt=media&token=ec08a063-321f-416b-87ec-6c327c31fac2'
                 alt='Featured Image'
               />
             </div>
