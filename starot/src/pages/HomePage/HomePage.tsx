@@ -33,8 +33,8 @@ export default function HomePage() {
               <p className='text-blue-light mb-6 text-center' style={{ fontSize: 15 }}>
                 Tải ứng dụng để tận hưởng những trải nghiệm thú vị hơn!
               </p>
-              <div className='space-x-4 text-center'>
-                <button className='border mb-5 border-blue text-blue rounded px-4 py-2 hover:bg-blue hover:text-white'>
+              <div className='text-center'>
+                <button className='border mb-5 border-blue text-blue rounded px-4 py-2 hover:bg-blue hover:text-white mr-4'>
                   <Link to='#'>DOWNLOAD IOS</Link>
                 </button>
                 <button className='border border-blue text-blue rounded px-4 py-2 hover:bg-blue hover:text-white'>
@@ -47,7 +47,7 @@ export default function HomePage() {
       </div>
 
       <div
-        className='bg-cover bg-no-repeat py-12 px-5 md:p-72'
+        className='bg-cover bg-no-repeat py-12 px-5 md:p-16 lg:p-72'
         style={{
           backgroundImage:
             "url('https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FVeStarotBG.png?alt=media&token=d20db05b-a8ed-465a-b376-35142e387a33')",
@@ -78,7 +78,7 @@ export default function HomePage() {
       </div>
 
       <div
-        className='bg-cover bg-no-repeat md:px-20 md:py-44 py-12'
+        className='bg-cover bg-no-repeat md:px-16 md:py-44 py-12 lg:px-10'
         style={{
           backgroundImage:
             "url('https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FTarotHealing.png?alt=media&token=76228406-365e-4095-bc7a-d04abf19d6f4')",
