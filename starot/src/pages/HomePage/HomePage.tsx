@@ -18,7 +18,7 @@ export default function HomePage() {
         <Header />
         <main className='w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-7 pb-16 flex-grow'>
           <div className='flex flex-col md:flex-row items-center justify-between'>
-            <div className='md:w-1/2 mb-8 md:mb-0 order-1 md:order-2 flex justify-center'>
+            <div className='md:w-1/2 mb-8 md:mb-20 order-1 md:order-2 flex justify-center'>
               <img
                 src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FPhoneBG.png?alt=media&token=f450c021-d377-4135-931b-3048baabc4a3'
                 alt='Featured Image'
