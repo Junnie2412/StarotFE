@@ -4,7 +4,6 @@ import DichVuPage from './pages/DichVuPage'
 import LienHePage from './pages/LienHePage'
 import ChinhSachPage from './pages/ChinhSachPage'
 import VeStarotPage from './pages/VeStarotPage'
-import MainLayout from './layouts/MainLayout'
 
 export default function useRouteElements() {
   const routeElements = useRoutes([
@@ -14,35 +13,19 @@ export default function useRouteElements() {
     },
     {
       path: '/dich-vu',
-      element: (
-        <MainLayout>
-          <DichVuPage />
-        </MainLayout>
-      )
+      element: <DichVuPage />
     },
     {
       path: '/lien-he',
-      element: (
-        <MainLayout>
-          <LienHePage />
-        </MainLayout>
-      )
+      element: <LienHePage />
     },
     {
       path: '/chinh-sach',
-      element: (
-        <MainLayout>
-          <ChinhSachPage />
-        </MainLayout>
-      )
+      element: <ChinhSachPage />
     },
     {
       path: '/ve-starot',
-      element: (
-        <MainLayout>
-          <VeStarotPage />
-        </MainLayout>
-      )
+      element: <VeStarotPage />
     }
   ])
   return routeElements
