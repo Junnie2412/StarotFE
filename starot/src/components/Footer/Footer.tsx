@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <div className='flex flex-wrap md:flex-nowrap md:px-10'>
+    <div className='flex flex-wrap md:flex-nowrap md:px-10 md:py-10 py-10 px-10'>
       <div className='w-full md:w-4/5 px-5'>
         <div className=''>
           <Link to='/' className='flex items-center space-x-3 rtl:space-x-reverse'>
