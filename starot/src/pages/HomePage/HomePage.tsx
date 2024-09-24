@@ -102,12 +102,14 @@ export default function HomePage() {
           </div>
           <div className='flex-1 p-4 flex justify-center items-center'>
             <div className='rounded-md'>
-              <img
-                src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FTarotHealingIm.png?alt=media&token=a2b180f3-e482-4a3a-847b-f6c7e4ea7d38'
-                alt='Featured Image'
-                width={500}
-                height={500}
-              />
+              <Link to='/tram-chua-lanh'>
+                <img
+                  src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FTarotHealingIm.png?alt=media&token=a2b180f3-e482-4a3a-847b-f6c7e4ea7d38'
+                  alt='Featured Image'
+                  width={500}
+                  height={500}
+                />
+              </Link>
             </div>
           </div>
           <div className='flex-1 p-4 flex flex-col justify-center items-center md:mt-10'>
