@@ -4,6 +4,10 @@ import DichVuPage from './pages/DichVuPage'
 import LienHePage from './pages/LienHePage'
 import ChinhSachPage from './pages/ChinhSachPage'
 import VeStarotPage from './pages/VeStarotPage'
+import BoiBaiPage from './pages/BoiBaiPage'
+import TinhYeuPage from './pages/TinhYeuPage/TinhYeuPage'
+import CongViecPage from './pages/CongViecPage'
+import SucKhoePage from './pages/SucKhoePage'
 
 export default function useRouteElements() {
   const routeElements = useRoutes([
@@ -26,6 +30,22 @@ export default function useRouteElements() {
     {
       path: '/ve-starot',
       element: <VeStarotPage />
+    },
+    {
+      path: '/tram-chua-lanh',
+      element: <BoiBaiPage />
+    },
+    {
+      path: '/tram-chua-lanh/tinh-yeu',
+      element: <TinhYeuPage />
+    },
+    {
+      path: '/tram-chua-lanh/cong-viec',
+      element: <CongViecPage />
+    },
+    {
+      path: '/tram-chua-lanh/suc-khoe',
+      element: <SucKhoePage />
     }
   ])
   return routeElements
