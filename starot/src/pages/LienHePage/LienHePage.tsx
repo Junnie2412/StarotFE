@@ -27,7 +27,7 @@ export default function LienHePage() {
                 <div className='flex flex-row items-center mt-5 md:mt-10 mb-2'>
                   <img
                     src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FMail.png?alt=media&token=7cb022be-3b16-476c-9cd2-abdc807e139a'
-                    className='h-4 md:mr-3'
+                    className='h-4 md:mr-3 sm:mr-3'
                     alt='Starot Logo'
                   />
                   <p className='md:mt-0 text-blue'>Starotcompany@gmail.com</p>
@@ -45,7 +45,7 @@ export default function LienHePage() {
                 <div className='flex flex-row items-center mt-5 md:mt-10 mb-2'>
                   <img
                     src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FAddressIcon.png?alt=media&token=f4cda88d-4d89-44d2-bfac-61389114853f'
-                    className='h-4 md:mr-2'
+                    className='h-4 md:mr-2 sm:mr-3'
                     alt='Starot Logo'
                   />
                   <p className='md:mt-0 text-blue'>123 Đường Tarot, Quận 1, TP. HCM</p>
