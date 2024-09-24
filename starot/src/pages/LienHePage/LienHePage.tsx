@@ -27,28 +27,28 @@ export default function LienHePage() {
                 <div className='flex flex-row items-center mt-5 md:mt-10 mb-2'>
                   <img
                     src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FMail.png?alt=media&token=7cb022be-3b16-476c-9cd2-abdc807e139a'
-                    className='h-4 md:mr-3 sm:mr-3'
+                    className='h-4 md:mr-3'
                     alt='Starot Logo'
                   />
-                  <p className='md:mt-0 text-blue'>Starotcompany@gmail.com</p>
+                  <p className='md:mt-0 text-blue md:ml-0 lg:ml-0 ml-3'>Starotcompany@gmail.com</p>
                 </div>
                 <p>Đội ngũ của chúng tôi sẽ phản hồi các yêu cầu qua email trong vòng 1-2 ngày làm việc.</p>
                 <div className='flex flex-row items-center mt-5 md:mt-10 mb-2'>
                   <img
                     src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FPhone.png?alt=media&token=bfb2b418-e818-48bf-89be-3afe6b029abe'
-                    className='h-5 md:mr-2'
+                    className='h-4 md:mr-3'
                     alt='Starot Logo'
                   />
-                  <p className='md:mt-0 text-blue'>+84 123 456 789</p>
+                  <p className='md:mt-0 text-blue md:ml-0 lg:ml-0 ml-2'>+84 123 456 789</p>
                 </div>
                 <p>Chúng tôi luôn sẵn sàng hỗ trợ quý khách từ thứ Hai đến thứ Sáu, từ 9 giờ sáng đến 6 giờ chiều.</p>
                 <div className='flex flex-row items-center mt-5 md:mt-10 mb-2'>
                   <img
                     src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FAddressIcon.png?alt=media&token=f4cda88d-4d89-44d2-bfac-61389114853f'
-                    className='h-4 md:mr-2 sm:mr-3'
+                    className='h-4 md:mr-3'
                     alt='Starot Logo'
                   />
-                  <p className='md:mt-0 text-blue'>123 Đường Tarot, Quận 1, TP. HCM</p>
+                  <p className='md:mt-0 text-blue md:ml-0 lg:ml-0 ml-3'>123 Đường Tarot, Quận 1, TP. HCM</p>
                 </div>
                 <p>
                   Quý khách có thể ghé thăm văn phòng của chúng tôi vào các ngày làm việc từ 9 giờ sáng đến 6 giờ chiều.
