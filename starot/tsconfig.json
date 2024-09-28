@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "skipLibCheck": true,
+    "typeRoots": ["./node_modules/@types", "./src"],
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"]

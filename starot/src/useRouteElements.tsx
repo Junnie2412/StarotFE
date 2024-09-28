@@ -8,6 +8,7 @@ import BoiBaiPage from './pages/BoiBaiPage'
 import TinhYeuPage from './pages/TinhYeuPage/TinhYeuPage'
 import CongViecPage from './pages/CongViecPage'
 import SucKhoePage from './pages/SucKhoePage'
+import TinhYeuKetQuaPage from './pages/TinhYeuPage/TinhYeuKetQuaPage'
 
 export default function useRouteElements() {
   const routeElements = useRoutes([
@@ -46,6 +47,10 @@ export default function useRouteElements() {
     {
       path: '/tram-chua-lanh/suc-khoe',
       element: <SucKhoePage />
+    },
+    {
+      path: '/tram-chua-lanh/tinh-yeu/ket-qua/:id',
+      element: <TinhYeuKetQuaPage />
     }
   ])
   return routeElements
