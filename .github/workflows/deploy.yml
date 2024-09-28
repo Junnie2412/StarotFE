@@ -1,51 +1,39 @@
-name: Deploy
-
 on:
   push:
     branches:
       - main
+name: 🚀 Deploy website on push
 
 jobs:
-  build:
-    name: Build
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
+      - name: 🚚 Get latest code
         uses: actions/checkout@v3
 
-      - name: Setup Node
-        uses: actions/setup-node@v1
+      - name: Use Node.js 20
+        uses: actions/setup-node@v2
         with:
-          node-version: 20
+          node-version: "20"
 
-      - name: Install dependencies
-        run: npm install --prefix ./starot
+      - name: 🔨 Build Project
+        run: |
+          npm install --prefix ./starot
+          npm run build --prefix ./starot
 
-      - name: Build project
-        run: npm run build --prefix ./starot
+      - name: 📂 Check build directory
+        run: |
+          if [ ! -d "./starot/dist" ]; then
+            echo "Build directory not found!"
+            exit 1
+          fi
 
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v3
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          name: production-files
-          path: ./starot/dist
-
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: production-files
-          path: ./starot/dist
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./starot/dist
+          server: ${{ secrets.GIT_CPANEL_REACT_SERVER }}
+          username: ${{ secrets.GIT_CPANEL_REACT_USER }}
+          password: ${{ secrets.GIT_CPANEL_REACT_PWD }}
+          protocol: ${{ secrets.GIT_CPANEL_REACT_PROTOCOL }}
+          local-dir: ./starot/dist
