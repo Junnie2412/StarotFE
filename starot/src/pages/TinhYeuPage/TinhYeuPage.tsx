@@ -1,13 +1,36 @@
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../../firebase'
+
+interface GridItem {
+  id: string
+  title: string
+  content: string
+  image: string
+}
 
 export default function TinhYeuPage() {
-  const gridItems = Array.from({ length: 10 }, (_, index) => ({
-    id: index + 1,
-    title: `Item ${index + 1}`,
-    content: `This is the content for item ${index + 1}.`
-  }))
+  const [gridItems, setGridItems] = useState<GridItem[]>([])
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'default')) // 'items' is the Firestore collection name
+        const itemsList = querySnapshot.docs.map((doc) => ({
+          id: doc.id, // Use the document ID as the item ID
+          ...doc.data() // Get the rest of the data from the document
+        }))
+        setGridItems(itemsList as GridItem[]) // Cast the data to GridItem[]
+      } catch (error) {
+        console.error('Error fetching items:', error)
+      }
+    }
+
+    fetchItems()
+  }, [])
 
   return (
     <>
@@ -31,7 +54,7 @@ export default function TinhYeuPage() {
                       key={item.id}
                       className='p-3 mb-10 transition duration-300 ease-in-out transform hover:scale-100'
                     >
-                      <Link to='/tram-chua-lanh/tinh-yeu/ket-qua'>
+                      <Link to={`/tram-chua-lanh/tinh-yeu/ket-qua/${item.id}`}>
                         <img
                           src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FTCLTinhYeu.png?alt=media&token=66cdec36-af9c-4284-892d-668c62ed9e67'
                           alt='Featured Image'
