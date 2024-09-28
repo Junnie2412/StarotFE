@@ -19,20 +19,17 @@ jobs:
         with:
           node-version: 20
 
-      - name: Move to project directory
-        run: cd StarotFE/starot
-
       - name: Install dependencies
-        run: npm install --prefix StarotFE/starot
+        run: npm install --prefix ./starot
 
       - name: Build project
-        run: npm run build --prefix StarotFE/starot
+        run: npm run build --prefix ./starot
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
         with:
           name: production-files
-          path: StarotFE/starot/dist
+          path: ./starot/dist
 
   deploy:
     name: Deploy
@@ -45,10 +42,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: production-files
-          path: ./dist
+          path: ./starot/dist
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./starot/dist
