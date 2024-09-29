@@ -1,7 +1,7 @@
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 
-export default function eStarotPage() {
+export default function VeStarotPage() {
   return (
     <>
       <div
