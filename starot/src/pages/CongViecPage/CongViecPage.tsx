@@ -1,13 +1,32 @@
-import { Link } from 'react-router-dom'
-import Footer from '../../components/Footer'
 import Header from '../../components/Header'
+import Footer from '../../components/Footer'
+import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { fetchCongViecDocuments } from '../../firebase'
+
+interface GridItem {
+  id: string
+  title: string
+  content: string
+  image: string
+}
 
 export default function CongViecPage() {
-  const gridItems = Array.from({ length: 10 }, (_, index) => ({
-    id: index + 1,
-    title: `Item ${index + 1}`,
-    content: `This is the content for item ${index + 1}.`
-  }))
+  const [gridItems, setGridItems] = useState<GridItem[]>([])
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const itemsList = await fetchCongViecDocuments()
+        setGridItems(itemsList as GridItem[])
+      } catch (error) {
+        console.error('Error fetching items:', error)
+      }
+    }
+
+    fetchItems()
+  }, [])
+
   return (
     <>
       <div
@@ -30,7 +49,7 @@ export default function CongViecPage() {
                       key={item.id}
                       className='p-3 mb-10 transition duration-300 ease-in-out transform hover:scale-100'
                     >
-                      <Link to='/tram-chua-lanh/cong-viec/ket-qua'>
+                      <Link to={`/tram-chua-lanh/cong-viec/ket-qua/${item.id}`}>
                         <img
                           src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FTCLCongViec.png?alt=media&token=536afa44-e292-49b9-bb64-9e192d227b82'
                           alt='Featured Image'

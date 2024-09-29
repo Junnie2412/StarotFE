@@ -2,7 +2,7 @@
 import { initializeApp } from 'firebase/app'
 import { getStorage } from 'firebase/storage'
 import { collection, doc, getDoc, getDocs, getFirestore, query, where } from 'firebase/firestore'
-import { BoiBaiType } from './@types/BoiBaiType.type'
+import { BoiBaiType } from './types/BoiBaiType.type'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDb_s2ughwJZDPdqUcNhlClCwYZSTw24lQ',
@@ -47,7 +47,47 @@ export const fetchTinhYeuDocuments = async () => {
   }
 }
 
-export const fetchTinhYeuDocumentById = async (id: string): Promise<BoiBaiType | null> => {
+export const fetchCongViecDocuments = async () => {
+  try {
+    const colRef = collection(db, 'StarotID')
+    const q = query(colRef, where('Type', '==', 'Công Việc'))
+    const querySnapshot = await getDocs(q)
+
+    const itemsList = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data()
+    }))
+
+    const shuffledItemsList = shuffleArray(itemsList)
+
+    return shuffledItemsList
+  } catch (error) {
+    console.error('Error fetching documents:', error)
+    throw error
+  }
+}
+
+export const fetchSucKhoeDocuments = async () => {
+  try {
+    const colRef = collection(db, 'StarotID')
+    const q = query(colRef, where('Type', '==', 'Sức Khỏe'))
+    const querySnapshot = await getDocs(q)
+
+    const itemsList = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data()
+    }))
+
+    const shuffledItemsList = shuffleArray(itemsList)
+
+    return shuffledItemsList
+  } catch (error) {
+    console.error('Error fetching documents:', error)
+    throw error
+  }
+}
+
+export const fetchDocumentById = async (id: string): Promise<BoiBaiType | null> => {
   try {
     const docRef = doc(db, 'StarotID', id)
     const docSnap = await getDoc(docRef)

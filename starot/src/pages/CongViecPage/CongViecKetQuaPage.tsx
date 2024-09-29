@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { fetchDocumentById } from '../../firebase'
 import { BoiBaiType } from '../../types/BoiBaiType.type'
 
-export default function TinhYeuKetQuaPage() {
+export default function CongViecKetQuaPage() {
   const { id } = useParams<{ id: string }>()
   const [data, setData] = useState<BoiBaiType | null>(null)
 

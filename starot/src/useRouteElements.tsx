@@ -9,6 +9,8 @@ import TinhYeuPage from './pages/TinhYeuPage/TinhYeuPage'
 import CongViecPage from './pages/CongViecPage'
 import SucKhoePage from './pages/SucKhoePage'
 import TinhYeuKetQuaPage from './pages/TinhYeuPage/TinhYeuKetQuaPage'
+import CongViecKetQuaPage from './pages/CongViecPage/CongViecKetQuaPage'
+import SucKhoeKetQuaPage from './pages/SucKhoePage/SucKhoeKetQuaPage'
 
 export default function useRouteElements() {
   const routeElements = useRoutes([
@@ -51,6 +53,14 @@ export default function useRouteElements() {
     {
       path: '/tram-chua-lanh/tinh-yeu/ket-qua/:id',
       element: <TinhYeuKetQuaPage />
+    },
+    {
+      path: '/tram-chua-lanh/cong-viec/ket-qua/:id',
+      element: <CongViecKetQuaPage />
+    },
+    {
+      path: '/tram-chua-lanh/suc-khoe/ket-qua/:id',
+      element: <SucKhoeKetQuaPage />
     }
   ])
   return routeElements
