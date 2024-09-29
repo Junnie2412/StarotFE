@@ -2,8 +2,7 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { collection, getDocs } from 'firebase/firestore'
-import { db } from '../../firebase'
+import { fetchTinhYeuDocuments } from '../../firebase'
 
 interface GridItem {
   id: string
@@ -18,12 +17,8 @@ export default function TinhYeuPage() {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, 'default')) // 'items' is the Firestore collection name
-        const itemsList = querySnapshot.docs.map((doc) => ({
-          id: doc.id, // Use the document ID as the item ID
-          ...doc.data() // Get the rest of the data from the document
-        }))
-        setGridItems(itemsList as GridItem[]) // Cast the data to GridItem[]
+        const itemsList = await fetchTinhYeuDocuments()
+        setGridItems(itemsList as GridItem[])
       } catch (error) {
         console.error('Error fetching items:', error)
       }
