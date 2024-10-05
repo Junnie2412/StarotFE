@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function QuanLiCuaHangPage() {
   const services = [
     {
@@ -83,9 +85,11 @@ export default function QuanLiCuaHangPage() {
               </svg>
             </div>
             <div className='relative'>
-              <button className='bg-white border text-blue border-blue rounded-md w-full md:w-auto py-2 px-10'>
-                Lịch Sử Cửa Hàng
-              </button>
+              <Link to='/admin/quan-li-cua-hang/lich-su-cua-hang'>
+                <button className='bg-white border text-blue border-blue rounded-md w-full md:w-auto py-2 px-10 hover:bg-blue hover:text-white'>
+                  Lịch Sử Cửa Hàng
+                </button>
+              </Link>
             </div>
           </div>
         </div>
