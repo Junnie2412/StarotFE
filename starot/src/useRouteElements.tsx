@@ -11,6 +11,12 @@ import SucKhoePage from './pages/SucKhoePage'
 import TinhYeuKetQuaPage from './pages/TinhYeuPage/TinhYeuKetQuaPage'
 import CongViecKetQuaPage from './pages/CongViecPage/CongViecKetQuaPage'
 import SucKhoeKetQuaPage from './pages/SucKhoePage/SucKhoeKetQuaPage'
+import AdminLoginPage from './pages/AdminPage/AdminLoginPage'
+import ThongKePage from './pages/AdminPage/ThongKePage/ThongKePage'
+import QuanLiDichVuPage from './pages/AdminPage/QuanLiDichVuPage/QuanLiDichVuPage'
+import QuanLiTaiKhoanPage from './pages/AdminPage/QuanLiTaiKhoanPage/QuanLiTaiKhoanPage'
+import QuanLiCuaHangPage from './pages/AdminPage/QuanLiCuaHangPage/QuanLiCuaHangPage'
+import QuanLiGiaoDichPage from './pages/AdminPage/QuanLiGiaoDichPage/QuanLiGiaoDichPage'
 
 export default function useRouteElements() {
   const routeElements = useRoutes([
@@ -61,6 +67,30 @@ export default function useRouteElements() {
     {
       path: '/tram-chua-lanh/suc-khoe/ket-qua/:id',
       element: <SucKhoeKetQuaPage />
+    },
+    {
+      path: '/admin',
+      element: <AdminLoginPage />
+    },
+    {
+      path: '/admin/thong-ke',
+      element: <ThongKePage />
+    },
+    {
+      path: '/admin/quan-li-dich-vu',
+      element: <QuanLiDichVuPage />
+    },
+    {
+      path: '/admin/quan-li-tai-khoan',
+      element: <QuanLiTaiKhoanPage />
+    },
+    {
+      path: '/admin/quan-li-cua-hang',
+      element: <QuanLiCuaHangPage />
+    },
+    {
+      path: '/admin/quan-li-giao-dich',
+      element: <QuanLiGiaoDichPage />
     }
   ])
   return routeElements

@@ -2,7 +2,8 @@
 import { initializeApp } from 'firebase/app'
 import { getStorage } from 'firebase/storage'
 import { collection, doc, getDoc, getDocs, getFirestore, query, where } from 'firebase/firestore'
-import { BoiBaiType } from './types/BoiBaiType.type'
+import { BoiBai } from './types/BoiBai.type'
+import { Admin } from './types/Admin.type'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDb_s2ughwJZDPdqUcNhlClCwYZSTw24lQ',
@@ -87,13 +88,13 @@ export const fetchSucKhoeDocuments = async () => {
   }
 }
 
-export const fetchDocumentById = async (id: string): Promise<BoiBaiType | null> => {
+export const fetchDocumentById = async (id: string): Promise<BoiBai | null> => {
   try {
     const docRef = doc(db, 'StarotID', id)
     const docSnap = await getDoc(docRef)
 
     if (docSnap.exists()) {
-      const data = docSnap.data() as Omit<BoiBaiType, 'id'>
+      const data = docSnap.data() as Omit<BoiBai, 'id'>
       return {
         id: docSnap.id,
         ...data
@@ -104,6 +105,26 @@ export const fetchDocumentById = async (id: string): Promise<BoiBaiType | null> 
     }
   } catch (error) {
     console.error('Error fetching document:', error)
+    throw error
+  }
+}
+
+export const fetchAdmins = async () => {
+  try {
+    const colRef = collection(db, 'AdminID')
+    const querySnapshot = await getDocs(colRef)
+
+    const adminsList = querySnapshot.docs.map(
+      (doc) =>
+        ({
+          id: doc.id,
+          ...doc.data()
+        }) as Admin
+    )
+
+    return adminsList
+  } catch (error) {
+    console.error('Error fetching admins:', error)
     throw error
   }
 }
