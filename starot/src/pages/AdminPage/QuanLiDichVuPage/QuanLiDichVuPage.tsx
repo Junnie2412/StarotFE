@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function QuanLiDichVuPage() {
   const services = [
     {
@@ -76,9 +78,11 @@ export default function QuanLiDichVuPage() {
               </svg>
             </div>
             <div className='relative'>
-              <button className='bg-white border text-blue border-blue rounded-md w-full md:w-auto py-2 px-10'>
-                Lịch Sử Dịch Vụ
-              </button>
+              <Link to='/admin/quan-li-dich-vu/lich-su-dich-vu'>
+                <button className='bg-white border text-blue border-blue rounded-md w-full md:w-auto py-2 px-10 hover:bg-blue hover:text-white'>
+                  Lịch Sử Dịch Vụ
+                </button>
+              </Link>
             </div>
           </div>
         </div>

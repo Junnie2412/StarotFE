@@ -17,6 +17,7 @@ import QuanLiDichVuPage from './pages/AdminPage/QuanLiDichVuPage/QuanLiDichVuPag
 import QuanLiTaiKhoanPage from './pages/AdminPage/QuanLiTaiKhoanPage/QuanLiTaiKhoanPage'
 import QuanLiCuaHangPage from './pages/AdminPage/QuanLiCuaHangPage/QuanLiCuaHangPage'
 import QuanLiGiaoDichPage from './pages/AdminPage/QuanLiGiaoDichPage/QuanLiGiaoDichPage'
+import LichSuDichVuPage from './pages/AdminPage/QuanLiDichVuPage/LichSuDichVuPage'
 
 export default function useRouteElements() {
   const routeElements = useRoutes([
@@ -91,6 +92,14 @@ export default function useRouteElements() {
     {
       path: '/admin/quan-li-giao-dich',
       element: <QuanLiGiaoDichPage />
+    },
+    {
+      path: '/admin/quan-li-dich-vu/lich-su-dich-vu',
+      element: <LichSuDichVuPage />
+    },
+    {
+      path: '/admin/quan-li-cua-hang/lich-su-cua-hang',
+      element: <QuanLiCuaHangPage />
     }
   ])
   return routeElements
