@@ -47,7 +47,7 @@ export default function Header() {
             <li>
               <Link
                 to='https://www.apple.com/vn/app-store/'
-                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
+                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
                 aria-current='page'
               >
                 DOWNLOAD IOS
@@ -56,7 +56,7 @@ export default function Header() {
             <li>
               <Link
                 to='https://play.google.com/store/games?device=windows&utm_source=apac_med&hl=vi-VN&utm_medium=hasem&utm_content=Jan0324&utm_campaign=Evergreen&pcampaignid=MKT-EDR-apac-vn-1707570-med-hasem-py-Evergreen-Jan0324-Text_Search_BKWS-BKWS%7CONSEM_kwid_43700078803271722_creativeid_694706148392_device_c&gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH50GILv7Bu8ivLdr6tACLTZMHOSUN1jOodXaFX3w5gUOKpWq5fWzArUaAuwcEALw_wcB&gclsrc=aw.ds&pli=1'
-                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
+                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
               >
                 DOWNLOAD ANDROID
               </Link>
@@ -64,7 +64,7 @@ export default function Header() {
             <li>
               <Link
                 to='/tram-chua-lanh'
-                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
+                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
               >
                 TRẠM CHỮA LÀNH
               </Link>
@@ -72,7 +72,7 @@ export default function Header() {
             <li>
               <Link
                 to='/dich-vu'
-                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
+                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
               >
                 DỊCH VỤ
               </Link>
@@ -80,7 +80,7 @@ export default function Header() {
             <li>
               <Link
                 to='/lien-he'
-                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
+                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
               >
                 LIÊN HỆ
               </Link>
@@ -90,32 +90,32 @@ export default function Header() {
         <div className='hidden md:flex md:space-x-8'>
           <Link
             to='https://www.apple.com/vn/app-store/'
-            className='block py-2 px-3 text-blue rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500'
+            className='block py-2 px-3 text-blue rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500'
             aria-current='page'
           >
             DOWNLOAD IOS
           </Link>
           <Link
             to='https://play.google.com/store/games?device=windows&utm_source=apac_med&hl=vi-VN&utm_medium=hasem&utm_content=Jan0324&utm_campaign=Evergreen&pcampaignid=MKT-EDR-apac-vn-1707570-med-hasem-py-Evergreen-Jan0324-Text_Search_BKWS-BKWS%7CONSEM_kwid_43700078803271722_creativeid_694706148392_device_c&gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH50GILv7Bu8ivLdr6tACLTZMHOSUN1jOodXaFX3w5gUOKpWq5fWzArUaAuwcEALw_wcB&gclsrc=aw.ds&pli=1'
-            className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
+            className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
           >
             DOWNLOAD ANDROID
           </Link>
           <Link
             to='/tram-chua-lanh'
-            className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
+            className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
           >
             TRẠM CHỮA LÀNH
           </Link>
           <Link
             to='/dich-vu'
-            className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
+            className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
           >
             DỊCH VỤ
           </Link>
           <Link
             to='/lien-he'
-            className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
+            className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
           >
             LIÊN HỆ
           </Link>
