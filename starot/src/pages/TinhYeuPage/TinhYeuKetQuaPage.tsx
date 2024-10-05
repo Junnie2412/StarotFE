@@ -3,11 +3,11 @@ import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 import { useEffect, useState } from 'react'
 import { fetchDocumentById } from '../../firebase'
-import { BoiBaiType } from '../../types/BoiBaiType.type'
+import { BoiBai } from '../../types/BoiBai.type'
 
 export default function TinhYeuKetQuaPage() {
   const { id } = useParams<{ id: string }>()
-  const [data, setData] = useState<BoiBaiType | null>(null)
+  const [data, setData] = useState<BoiBai | null>(null)
 
   console.log(data)
 

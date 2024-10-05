@@ -8,7 +8,11 @@ export default {
       },
       colors: {
         blue: '#3014BA',
-        'blue-light': '#392C7A'
+        'blue-light': '#392C7A',
+        'bg-admin': '#fbfbfb'
+      },
+      screens: {
+        'sm-md': '900px',
       }
     }
   },

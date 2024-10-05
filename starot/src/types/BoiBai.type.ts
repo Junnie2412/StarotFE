@@ -1,4 +1,4 @@
-export type BoiBaiType = {
+export type BoiBai = {
   id: string
   Title: string
   Content: string
