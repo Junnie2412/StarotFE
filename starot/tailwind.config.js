@@ -13,7 +13,10 @@ export default {
       },
       screens: {
         'sm-md': '900px',
-      }
+      },
+      fontSize: {
+        'xxs': '0.6rem',
+      },
     }
   },
   plugins: []

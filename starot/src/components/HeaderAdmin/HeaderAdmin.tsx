@@ -28,30 +28,33 @@ const HeaderAdmin: React.FC<HeaderAdminPageProps> = ({ admin }) => {
               alt='Starot Logo'
             />
           </Link>
-          <nav>
+          <nav className='hidden sm-md:flex'>
             <ul className='flex space-x-4'>
               <li>
-                <a href='/admin/thong-ke' className='sm-md:text-xs lg:text-base text-blue hover:text-blue-light'>
+                <a href='/admin/thong-ke' className='sm-md:text-xxs lg:text-base text-blue hover:text-blue-light'>
                   THỐNG KÊ
                 </a>
               </li>
               <li>
                 <a
                   href='/admin/quan-li-tai-khoan'
-                  className='sm-md:text-xs lg:text-base text-blue hover:text-blue-light'
+                  className='sm-md:text-xxs lg:text-base text-blue hover:text-blue-light'
                 >
                   QUẢN LÝ TÀI KHOẢN
                 </a>
               </li>
               <li>
-                <a href='/admin/quan-li-dich-vu' className='sm-md:text-xs lg:text-base text-blue hover:text-blue-light'>
+                <a
+                  href='/admin/quan-li-dich-vu'
+                  className='sm-md:text-xxs lg:text-base text-blue hover:text-blue-light'
+                >
                   QUẢN LÝ DỊCH VỤ
                 </a>
               </li>
               <li>
                 <a
                   href='/admin/quan-li-cua-hang'
-                  className='sm-md:text-xs lg:text-base text-blue hover:text-blue-light'
+                  className='sm-md:text-xxs lg:text-base text-blue hover:text-blue-light'
                 >
                   QUẢN LÝ CỬA HÀNG
                 </a>
@@ -59,7 +62,7 @@ const HeaderAdmin: React.FC<HeaderAdminPageProps> = ({ admin }) => {
               <li>
                 <a
                   href='/admin/quan-li-giao-dich'
-                  className='sm-md:text-xs lg:text-base text-blue hover:text-blue-light'
+                  className='sm-md:text-xxs lg:text-base text-blue hover:text-blue-light'
                 >
                   QUẢN LÝ GIAO DỊCH
                 </a>
@@ -68,7 +71,7 @@ const HeaderAdmin: React.FC<HeaderAdminPageProps> = ({ admin }) => {
           </nav>
         </div>
         <div className='relative flex items-center'>
-          <span className='mr-2 text-base hidden sm-md:block text-blue'>{admin.FullName}</span>
+          <span className='mr-2 sm-md:text-xxs lg:text-base hidden sm-md:block text-blue'>{admin.FullName}</span>
           <button
             className='h-8 w-8 rounded-full focus:outline-none'
             onClick={handleToggleDropdown}
@@ -78,7 +81,7 @@ const HeaderAdmin: React.FC<HeaderAdminPageProps> = ({ admin }) => {
             <img src={`${admin.Avata}?height=32&width=32`} alt='User' className='h-full w-full rounded-full' />
           </button>
           {dropdownOpen && (
-            <div className='absolute right-0 z-10 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg'>
+            <div className='absolute right-0 z-10 mt-1 w-48 bg-white border border-gray-300 rounded-lg shadow-lg'>
               <div className='px-4 py-3'>
                 <span className='block text-xs text-gray-900'>{admin.FullName}</span>
                 <span className='block text-xs text-gray-500 truncate'>{admin.Gmail}</span>
@@ -88,6 +91,7 @@ const HeaderAdmin: React.FC<HeaderAdminPageProps> = ({ admin }) => {
                   <Link
                     to='/admin/thong-ke'
                     className='block px-4 py-2 text-xs hover:text-blue-light hover:bg-gray-100'
+                    onClick={handleCloseDropdown} // Close dropdown on link click
                   >
                     Thống Kê
                   </Link>
@@ -96,6 +100,7 @@ const HeaderAdmin: React.FC<HeaderAdminPageProps> = ({ admin }) => {
                   <Link
                     to='/admin/quan-li-tai-khoan'
                     className='block px-4 py-2 text-xs hover:text-blue-light hover:bg-gray-100'
+                    onClick={handleCloseDropdown}
                   >
                     Quản Lí Tài Khoản
                   </Link>
@@ -104,6 +109,7 @@ const HeaderAdmin: React.FC<HeaderAdminPageProps> = ({ admin }) => {
                   <Link
                     to='/admin/quan-li-dich-vu'
                     className='block px-4 py-2 text-xs hover:text-blue-light hover:bg-gray-100'
+                    onClick={handleCloseDropdown}
                   >
                     Quản Lí Dịch Vụ
                   </Link>
@@ -112,6 +118,7 @@ const HeaderAdmin: React.FC<HeaderAdminPageProps> = ({ admin }) => {
                   <Link
                     to='/admin/quan-li-cua-hang'
                     className='block px-4 py-2 text-xs hover:text-blue-light hover:bg-gray-100'
+                    onClick={handleCloseDropdown}
                   >
                     Quản Lí Cửa Hàng
                   </Link>
@@ -120,12 +127,17 @@ const HeaderAdmin: React.FC<HeaderAdminPageProps> = ({ admin }) => {
                   <Link
                     to='/admin/quan-li-giao-dich'
                     className='block px-4 py-2 text-xs hover:text-blue-light hover:bg-gray-100'
+                    onClick={handleCloseDropdown}
                   >
                     Quản Lí Giao Dịch
                   </Link>
                 </li>
                 <li>
-                  <Link to='/admin/login' className='block px-4 py-2 text-xs hover:text-blue-light hover:bg-gray-100'>
+                  <Link
+                    to='/admin/login'
+                    className='block px-4 py-2 text-xs hover:text-blue-light hover:bg-gray-100'
+                    onClick={handleCloseDropdown}
+                  >
                     Đăng Xuất
                   </Link>
                 </li>

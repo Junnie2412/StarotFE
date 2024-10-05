@@ -61,8 +61,8 @@ const ThongKePage = () => {
       <main className='container mx-auto lg:px-32 md:px-10 pb-28 pt-10 mt-10'>
         <div className='flex flex-col space-y-8'>
           <div className='bg-white shadow-lg rounded-lg p-10'>
-            <div className='flex justify-between items-center mb-6'>
-              <h1 className='lg:text-2xl font-bold text-purple-700'>THỐNG KÊ</h1>
+            <div className='flex flex-col md:flex-row justify-between items-center mb-6'>
+              <h1 className='text-lg md:text-2xl font-bold text-purple-700 mb-4 md:mb-0'>THỐNG KÊ</h1>
               <div className='flex space-x-2'>
                 <select className='border rounded px-2 py-1'>
                   <option>Ngày 18</option>
@@ -98,8 +98,10 @@ const ThongKePage = () => {
           </div>
 
           <div className='bg-white shadow-lg rounded-lg p-10'>
-            <div className='flex justify-between items-center mb-20'>
-              <div>
+            <div className='flex flex-col md:flex-row justify-between items-center mb-20'>
+              <div className='mb-4 md:mb-0'>
+                {' '}
+                {/* Add margin bottom for mobile view */}
                 <h2 className='text-2xl font-bold text-purple-700'>TỔNG QUAN TÀI CHÍNH</h2>
                 <div className='text-3xl font-bold'>
                   2.100.000 VNĐ <span className='text-green-500 text-lg'>2%</span>
@@ -117,6 +119,7 @@ const ThongKePage = () => {
                 </select>
               </div>
             </div>
+
             <div className='w-full mx-auto rounded-lg'>
               <ResponsiveContainer width='100%' height={400}>
                 <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
