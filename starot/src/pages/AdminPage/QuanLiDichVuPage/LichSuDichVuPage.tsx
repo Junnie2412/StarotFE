@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function QuanLiGiaoDichPage() {
+export default function LichSuDichVuPage() {
   const transactions = [
     {
       id: '#15270',
@@ -9,6 +9,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '150,000 VND',
       user: 'Khang',
       email: 'user1@gmail.com',
+      sex: 'Male',
+      role: 'Khách hàng',
       status: 'Hủy giao dịch'
     },
     {
@@ -18,6 +20,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '100,000 VND',
       user: 'Kiên',
       email: 'user2@gmail.com',
+      sex: 'Male',
+      role: 'Reader',
       status: 'Thành công'
     },
     {
@@ -27,6 +31,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '300,000 VND',
       user: 'Phước',
       email: 'user3@gmail.com',
+      sex: 'Female',
+      role: 'Khách hàng',
       status: 'Thành công'
     },
     {
@@ -36,6 +42,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '400,000 VND',
       user: 'Nam',
       email: 'user4@gmail.com',
+      sex: 'Male',
+      role: 'Khách hàng',
       status: 'Thành công'
     },
     {
@@ -45,6 +53,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '150,000 VND',
       user: 'Hải',
       email: 'user5@gmail.com',
+      sex: 'Female',
+      role: 'Reader',
       status: 'Thành công'
     },
     {
@@ -54,6 +64,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '80,000 VND',
       user: 'Nhu',
       email: 'user6@gmail.com',
+      sex: 'Female',
+      role: 'Khách hàng',
       status: 'Thành công'
     },
     {
@@ -63,6 +75,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '150,000 VND',
       user: 'Thảo',
       email: 'user7@gmail.com',
+      sex: 'Male',
+      role: 'Khách hàng',
       status: 'Thành công'
     },
     {
@@ -72,6 +86,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '200,000 VND',
       user: 'Vũ',
       email: 'user8@gmail.com',
+      sex: 'Male',
+      role: 'Reader',
       status: 'Hủy giao dịch'
     },
     {
@@ -81,6 +97,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '110,000 VND',
       user: 'Tâm',
       email: 'user9@gmail.com',
+      sex: 'Male',
+      role: 'Khách hàng',
       status: 'Hủy giao dịch'
     },
     {
@@ -90,6 +108,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '200,000 VND',
       user: 'Lài',
       email: 'user10@gmail.com',
+      sex: 'Male',
+      role: 'Khách hàng',
       status: 'Thành công'
     }
   ]
@@ -105,7 +125,7 @@ export default function QuanLiGiaoDichPage() {
       <div className='max-w-8xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden'>
         <div className='p-6 lg:p-8'>
           <div className='flex flex-col lg:flex-row justify-between items-center mb-6'>
-            <h1 className='text-2xl font-bold text-indigo-700 mb-4 lg:mb-0 lg:py-10'>QUẢN LÍ GIAO DỊCH</h1>
+            <h1 className='text-2xl font-bold text-indigo-700 mb-4 lg:mb-0 lg:py-10'>LỊCH SỬ DỊCH VỤ</h1>
             <div className='w-full lg:w-auto'>
               <div className='relative'>
                 <input
@@ -113,7 +133,7 @@ export default function QuanLiGiaoDichPage() {
                   placeholder='Tìm kiếm...'
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className='w-full lg:w-64 pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500'
+                  className='w-full border-blue lg:w-64 pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500'
                 />
                 <svg
                   className='absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400'
@@ -135,75 +155,74 @@ export default function QuanLiGiaoDichPage() {
                 <tr>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
                     Id
                   </th>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
                     Mã giao dịch
                   </th>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
                     Thời gian
                   </th>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
                     Ngày/Tháng/Năm
                   </th>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
                     Nội dung
                   </th>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
-                  >
-                    Tổng tiền
-                  </th>
-                  <th
-                    scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
                     Tên
                   </th>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
                     Email
                   </th>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
-                    Trạng thái
+                    Giới Tính
                   </th>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
-                    Phản hồi
+                    Vai Trò
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
+                  >
+                    Tình Trạng
                   </th>
                 </tr>
               </thead>
               <tbody className='bg-white divide-y divide-gray-200'>
                 {filteredTransactions.map((transaction, index) => (
-                  <tr key={transaction.id} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <tr key={transaction.id}>
                     <td className='px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900'>{index + 1}</td>
                     <td className='px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900'>{transaction.id}</td>
                     <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>12:00</td>
                     <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>{transaction.date}</td>
                     <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-900'>{transaction.service}</td>
-                    <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-900'>{transaction.amount}</td>
                     <td className='px-6 py-4 whitespace-nowrap'>
                       <div className='flex items-center'>
                         <div className='flex-shrink-0 h-10 w-10'>
@@ -222,6 +241,25 @@ export default function QuanLiGiaoDichPage() {
                     <td className='px-6 py-4 whitespace-nowrap'>
                       <span
                         className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                          transaction.sex === 'Female' ? 'bg-red-700 text-white' : 'bg-blue text-white'
+                        }`}
+                      >
+                        {transaction.sex}
+                      </span>
+                    </td>
+                    <td className='px-6 py-4 whitespace-nowrap'>
+                      <span
+                        className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full
+                      ${transaction.role === 'Admin' ? 'border border-blue text-blue-500' : ''}
+                      ${transaction.role === 'Khách hàng' ? 'border border-green-500 text-green-500' : ''}
+                      ${transaction.role === 'Reader' ? 'border border-pink-500 text-pink-500' : ''}`}
+                      >
+                        {transaction.role}
+                      </span>
+                    </td>
+                    <td className='px-6 py-4 whitespace-nowrap'>
+                      <span
+                        className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                           transaction.status === 'Hủy giao dịch'
                             ? 'bg-red-100 text-red-800'
                             : 'bg-green-100 text-green-800'
@@ -229,11 +267,6 @@ export default function QuanLiGiaoDichPage() {
                       >
                         {transaction.status}
                       </span>
-                    </td>
-                    <td className='px-6 py-4 whitespace-nowrap text-sm font-medium'>
-                      <button className='text-indigo-600 hover:text-indigo-900 bg-indigo-100 px-2 py-1 rounded'>
-                        {transaction.status === 'Đã giao dịch' ? 'Hoàn tiền' : 'Toàn tiền'}
-                      </button>
                     </td>
                   </tr>
                 ))}
