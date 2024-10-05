@@ -15,7 +15,7 @@ export default function LienHePage() {
       >
         <Header />
         <main className='w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:px-20 pt-7 pb-16 flex-grow'>
-          <div className='flex justify-center mt-5'>
+          <div className='flex justify-center lg:mt-32'>
             <div className='p-6 text-center'>
               <h1 className='font-bold text-blue mb-12' style={{ fontSize: 25 }}>
                 LIÊN HỆ
@@ -50,23 +50,9 @@ export default function LienHePage() {
                   />
                   <p className='md:mt-0 text-blue md:ml-0 lg:ml-0 ml-3'>123 Đường Tarot, Quận 1, TP. HCM</p>
                 </div>
-                <p>
+                <p className='lg:mb-72'>
                   Quý khách có thể ghé thăm văn phòng của chúng tôi vào các ngày làm việc từ 9 giờ sáng đến 6 giờ chiều.
                 </p>
-                <div className='flex flex-col items-center justify-center mt-5 md:mt-10 mb-2'>
-                  <img
-                    src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2Ffile-document.png?alt=media&token=52282f0d-ba5e-40de-b33b-429c96555fc7'
-                    className='h-6'
-                    alt='Starot Logo'
-                  />
-                  <p className='text-blue mt-2'>[Biểu mẫu liên hệ]</p>
-                </div>
-                <div className='flex flex-col items-center justify-center mt-5 md:mt-10 mb-2'>
-                  <p className='text-blue-light mt-2 mb-10'>
-                    Chúng tôi cam kết phản hồi tất cả các yêu cầu trong thời gian sớm nhất. Xin chân thành cảm ơn quý
-                    khách đã tin tưởng và sử dụng dịch vụ của chúng tôi!
-                  </p>
-                </div>
               </div>
             </div>
           </div>
