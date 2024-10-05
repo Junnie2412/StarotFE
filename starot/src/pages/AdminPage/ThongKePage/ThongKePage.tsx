@@ -64,13 +64,13 @@ const ThongKePage = () => {
             <div className='flex flex-col md:flex-row justify-between items-center mb-6'>
               <h1 className='text-lg md:text-2xl font-bold text-purple-700 mb-4 md:mb-0'>THỐNG KÊ</h1>
               <div className='flex space-x-2'>
-                <select className='border rounded px-2 py-1'>
+                <select className='text-blue border rounded px-2 py-1 border-blue'>
                   <option>Ngày 18</option>
                 </select>
-                <select className='border rounded px-2 py-1'>
+                <select className='text-blue border rounded px-2 py-1 border-blue'>
                   <option>Tháng 6</option>
                 </select>
-                <select className='border rounded px-2 py-1'>
+                <select className='text-blue border rounded px-2 py-1 border-blue'>
                   <option>2023</option>
                 </select>
               </div>
@@ -82,7 +82,7 @@ const ThongKePage = () => {
               </div>
               <div className='w-full sm-md:w-1/3 pt-4 sm-md:pt-20'>
                 {chartData.labels.map((label, index) => (
-                  <div key={index} className='flex items-center mb-2 border border-gray-300 rounded-lg p-4'>
+                  <div key={index} className='flex items-center mb-4 border border-blue rounded-lg p-4'>
                     <div
                       className='w-4 h-4 mr-2 rounded-full'
                       style={{ backgroundColor: chartData.datasets[0].backgroundColor[index] }}
@@ -108,13 +108,13 @@ const ThongKePage = () => {
                 </div>
               </div>
               <div className='flex space-x-2'>
-                <select className='border rounded px-2 py-1'>
+                <select className='text-blue border rounded px-2 py-1 border-blue'>
                   <option>Ngày 18</option>
                 </select>
-                <select className='border rounded px-2 py-1'>
+                <select className='text-blue border rounded px-2 py-1 border-blue'>
                   <option>Tháng 6</option>
                 </select>
-                <select className='border rounded px-2 py-1'>
+                <select className='text-blue border rounded px-2 py-1 border-blue'>
                   <option>2023</option>
                 </select>
               </div>
