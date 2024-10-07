@@ -2,8 +2,8 @@ import { useParams } from 'react-router-dom'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 import { useEffect, useState } from 'react'
-import { fetchDocumentById } from '../../firebase'
 import { BoiBai } from '../../types/BoiBai.type'
+import { fetchDocumentById } from '../../apis/boiBai.api'
 
 export default function TinhYeuKetQuaPage() {
   const { id } = useParams<{ id: string }>()

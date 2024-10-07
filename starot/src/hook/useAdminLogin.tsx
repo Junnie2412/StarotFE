@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { NavigateFunction } from 'react-router-dom'
 import { Admin } from '../types/Admin.type'
-import { fetchAdmins } from '../firebase'
+import { fetchAdmins } from '../apis/auth.api'
 
 export const useAdminLogin = () => {
   const [email, setEmail] = useState('')

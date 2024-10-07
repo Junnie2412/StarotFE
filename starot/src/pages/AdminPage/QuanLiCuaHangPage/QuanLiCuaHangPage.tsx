@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import HeaderAdmin from '../../../components/HeaderAdmin/HeaderAdmin'
 
 export default function QuanLiCuaHangPage() {
   const services = [
@@ -61,8 +62,9 @@ export default function QuanLiCuaHangPage() {
   ]
 
   return (
-    <div className='min-h-screen bg-bg-admin lg:p-28 md:px-10 sm-md:px-10'>
-      <div className='container mx-auto p-6 bg-white rounded-lg shadow-lg lg:p-16'>
+    <div className='min-h-screen bg-bg-admin'>
+      <HeaderAdmin />
+      <div className='container mx-auto p-6 bg-white rounded-lg shadow-lg lg:p-16 my-20'>
         <div className='flex flex-col lg:flex-row justify-between mb-6 lg:space-x-4'>
           <h1 className='text-2xl font-bold text-indigo-700 mb-6'>QUẢN LÍ CỬA HÀNG</h1>
           <div className='flex flex-col md:flex-row justify-between mb-4 space-y-4 md:space-y-0'>

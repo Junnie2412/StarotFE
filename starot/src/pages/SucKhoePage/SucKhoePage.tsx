@@ -2,7 +2,7 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { fetchSucKhoeDocuments } from '../../firebase'
+import { fetchSucKhoeDocuments } from '../../apis/boiBai.api'
 
 interface GridItem {
   id: string

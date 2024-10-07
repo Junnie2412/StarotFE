@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import HeaderAdmin from '../../../components/HeaderAdmin/HeaderAdmin'
 
 export default function LichSuCuaHangPage() {
   const transactions = [
@@ -111,9 +112,10 @@ export default function LichSuCuaHangPage() {
   )
 
   return (
-    <div className='min-h-screen bg-gray-100 p-4 lg:p-8'>
-      <div className='max-w-8xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden'>
-        <div className='p-6 lg:p-8'>
+    <div className='min-h-screen bg-gray-100'>
+      <HeaderAdmin />
+      <div className='container mx-auto p-6 bg-white rounded-lg shadow-lg lg:p-16 my-20'>
+        <div>
           <div className='flex flex-col lg:flex-row justify-between items-center mb-6'>
             <h1 className='text-2xl font-bold text-indigo-700 mb-4 lg:mb-0 lg:py-10'>LỊCH SỬ CỬA HÀNG</h1>
             <div className='w-full lg:w-auto'>

@@ -2,14 +2,10 @@ import { Doughnut } from 'react-chartjs-2'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, CartesianGrid } from 'recharts'
 import HeaderAdmin from '../../../components/HeaderAdmin/HeaderAdmin'
-import { useLocation } from 'react-router-dom'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 
 const ThongKePage = () => {
-  const location = useLocation()
-  const admin = location.state?.admin
-
   const data = [
     { month: '01', value: 600000 },
     { month: '02', value: 1500000 },
@@ -57,7 +53,7 @@ const ThongKePage = () => {
 
   return (
     <div className='min-h-screen bg-bg-admin'>
-      <HeaderAdmin admin={admin} />
+      <HeaderAdmin />
       <main className='container mx-auto lg:px-32 md:px-10 pb-28 pt-10 mt-10'>
         <div className='flex flex-col space-y-8'>
           <div className='bg-white shadow-lg rounded-lg p-10'>

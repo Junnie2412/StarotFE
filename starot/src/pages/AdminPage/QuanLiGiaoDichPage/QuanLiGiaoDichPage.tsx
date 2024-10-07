@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import HeaderAdmin from '../../../components/HeaderAdmin/HeaderAdmin'
 
 export default function QuanLiGiaoDichPage() {
   const transactions = [
@@ -9,7 +10,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '150,000 VND',
       user: 'Khang',
       email: 'user1@gmail.com',
-      status: 'Hủy giao dịch'
+      status: 'Hủy giao dịch',
+      result: 'Hoàn tiền'
     },
     {
       id: '#15271',
@@ -18,7 +20,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '100,000 VND',
       user: 'Kiên',
       email: 'user2@gmail.com',
-      status: 'Thành công'
+      status: 'Thành công',
+      result: 'Thanh toán'
     },
     {
       id: '#15272',
@@ -27,7 +30,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '300,000 VND',
       user: 'Phước',
       email: 'user3@gmail.com',
-      status: 'Thành công'
+      status: 'Thành công',
+      result: 'Thanh toán'
     },
     {
       id: '#15273',
@@ -36,7 +40,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '400,000 VND',
       user: 'Nam',
       email: 'user4@gmail.com',
-      status: 'Thành công'
+      status: 'Thành công',
+      result: 'Thanh toán'
     },
     {
       id: '#15274',
@@ -45,7 +50,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '150,000 VND',
       user: 'Hải',
       email: 'user5@gmail.com',
-      status: 'Thành công'
+      status: 'Thành công',
+      result: 'Thanh toán'
     },
     {
       id: '#15275',
@@ -54,7 +60,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '80,000 VND',
       user: 'Nhu',
       email: 'user6@gmail.com',
-      status: 'Thành công'
+      status: 'Thành công',
+      result: 'Thanh toán'
     },
     {
       id: '#15276',
@@ -63,7 +70,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '150,000 VND',
       user: 'Thảo',
       email: 'user7@gmail.com',
-      status: 'Thành công'
+      status: 'Thành công',
+      result: 'Thanh toán'
     },
     {
       id: '#15277',
@@ -72,7 +80,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '200,000 VND',
       user: 'Vũ',
       email: 'user8@gmail.com',
-      status: 'Hủy giao dịch'
+      status: 'Hủy giao dịch',
+      result: 'Hoàn tiền'
     },
     {
       id: '#15278',
@@ -81,7 +90,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '110,000 VND',
       user: 'Tâm',
       email: 'user9@gmail.com',
-      status: 'Hủy giao dịch'
+      status: 'Hủy giao dịch',
+      result: 'Hoàn tiền'
     },
     {
       id: '#15279',
@@ -90,7 +100,8 @@ export default function QuanLiGiaoDichPage() {
       amount: '200,000 VND',
       user: 'Lài',
       email: 'user10@gmail.com',
-      status: 'Thành công'
+      status: 'Thành công',
+      result: 'Thanh toán'
     }
   ]
 
@@ -101,11 +112,12 @@ export default function QuanLiGiaoDichPage() {
   )
 
   return (
-    <div className='min-h-screen bg-gray-100 p-4 lg:p-8'>
-      <div className='max-w-8xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden'>
-        <div className='p-6 lg:p-8'>
+    <div className='min-h-screen bg-bg-admin'>
+      <HeaderAdmin />
+      <div className='container mx-auto mt-20 p-6 bg-white rounded-lg shadow-lg lg:p-16'>
+        <div>
           <div className='flex flex-col lg:flex-row justify-between items-center mb-6'>
-            <h1 className='text-2xl font-bold text-indigo-700 mb-4 lg:mb-0 lg:py-10'>QUẢN LÍ GIAO DỊCH</h1>
+            <h1 className='text-2xl font-bold text-indigo-700 lg:mb-0 mb-10'>QUẢN LÍ GIAO DỊCH</h1>
             <div className='w-full lg:w-auto'>
               <div className='relative'>
                 <input
@@ -129,7 +141,7 @@ export default function QuanLiGiaoDichPage() {
               </div>
             </div>
           </div>
-          <div className='overflow-x-auto'>
+          <div className='overflow-x-auto lg:mt-20 mt-10'>
             <table className='min-w-full divide-y divide-gray-200'>
               <thead className='bg-gray-50'>
                 <tr>
@@ -231,9 +243,15 @@ export default function QuanLiGiaoDichPage() {
                       </span>
                     </td>
                     <td className='px-6 py-4 whitespace-nowrap text-sm font-medium'>
-                      <button className='text-indigo-600 hover:text-indigo-900 bg-indigo-100 px-2 py-1 rounded'>
-                        {transaction.status === 'Đã giao dịch' ? 'Hoàn tiền' : 'Toàn tiền'}
-                      </button>
+                      <span
+                        className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                          transaction.result === 'Hoàn tiền'
+                            ? 'border border-red-600 text-blue'
+                            : 'border border-green-600 text-blue'
+                        }`}
+                      >
+                        {transaction.result}
+                      </span>
                     </td>
                   </tr>
                 ))}

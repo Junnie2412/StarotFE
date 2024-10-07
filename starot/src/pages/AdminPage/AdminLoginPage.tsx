@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { fetchAdmins } from '../../firebase'
 import { Admin } from '../../types/Admin.type'
+import { useAdmin } from '../../context/AdminContext'
+import { fetchAdmins } from '../../apis/auth.api'
 
 export default function AdminLoginPage() {
   const [email, setEmail] = useState('')
@@ -9,6 +10,7 @@ export default function AdminLoginPage() {
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
+  const { setAdmin } = useAdmin()
   const [admins, setAdmins] = useState<Admin[]>([])
 
   useEffect(() => {
@@ -24,12 +26,6 @@ export default function AdminLoginPage() {
     fetchData()
   }, [])
 
-  useEffect(() => {
-    setEmail('')
-    setPassword('')
-    setError('')
-  }, [])
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
@@ -39,7 +35,8 @@ export default function AdminLoginPage() {
       const matchingAdmin = admins.find((admin) => admin.Gmail === email && admin.Password === password)
 
       if (matchingAdmin) {
-        navigate('/admin/thong-ke', { state: { admin: matchingAdmin } })
+        setAdmin(matchingAdmin) // Store admin data in context
+        navigate('/admin/thong-ke')
       } else {
         setError('Invalid email or password')
       }
