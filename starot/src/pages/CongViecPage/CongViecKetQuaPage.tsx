@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 import { useEffect, useState } from 'react'
-import { fetchDocumentById } from '../../firebase'
+import { fetchDocumentById } from '../../apis/boiBai.api'
 import { BoiBai } from '../../types/BoiBai.type'
 
 export default function CongViecKetQuaPage() {

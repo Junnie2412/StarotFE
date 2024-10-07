@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import HeaderAdmin from '../../../components/HeaderAdmin/HeaderAdmin'
 
 export default function QuanLiTaiKhoanPage() {
   const users = [
@@ -98,8 +99,9 @@ export default function QuanLiTaiKhoanPage() {
   const [sortOrder, setSortOrder] = useState('Mới nhất')
 
   return (
-    <div className='min-h-screen bg-bg-admin lg:p-32 sm-md:px-10'>
-      <div className='container mx-auto p-6 bg-white rounded-lg shadow-lg lg:p-16'>
+    <div className='min-h-screen bg-bg-admin'>
+      <HeaderAdmin />
+      <main className='container mx-auto mt-20 p-6 bg-white rounded-lg shadow-lg lg:p-16'>
         <div className='flex flex-col lg:flex-row justify-between mb-6 lg:space-x-4'>
           <h1 className='text-2xl font-bold text-indigo-700 mb-6'>QUẢN LÍ TÀI KHOẢN</h1>
           <div className='flex flex-col md:flex-row justify-between mb-4 space-y-4 md:space-y-0'>
@@ -218,7 +220,7 @@ export default function QuanLiTaiKhoanPage() {
             </tbody>
           </table>
         </div>
-      </div>
+      </main>
     </div>
   )
 }
