@@ -8,8 +8,8 @@ import { BoiBai } from '../../types/BoiBai.type'
 export default function CongViecKetQuaPage() {
   const { id } = useParams<{ id: string }>()
   const [data, setData] = useState<BoiBai | null>(null)
-
-  console.log(data)
+  const [imageLoaded, setImageLoaded] = useState(false)
+  const [dataLoaded, setDataLoaded] = useState(false)
 
   useEffect(() => {
     const getData = async () => {
@@ -21,6 +21,7 @@ export default function CongViecKetQuaPage() {
       try {
         const result = await fetchDocumentById(id)
         setData(result)
+        setDataLoaded(true)
       } catch (error) {
         console.error('Error fetching the data:', error)
       }
@@ -28,6 +29,8 @@ export default function CongViecKetQuaPage() {
 
     getData()
   }, [id])
+
+  const isContentReady = dataLoaded && imageLoaded
 
   return (
     <>
@@ -44,15 +47,25 @@ export default function CongViecKetQuaPage() {
         <main className='flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12'>
           <div className='w-full max-w-4xl'>
             <div className='flex flex-col items-center'>
-              <div className='w-[60%] md:w-[46.67%] lg:w-[35%] mb-24 lg:mb-20  lg:mt-24'>
-                <img src={data?.Image} alt='Featured Image' className='w-full h-auto' />
+              <div className='w-[60%] md:w-[46.67%] lg:w-[35%] mb-24 lg:mb-20 lg:mt-24'>
+                {!imageLoaded && <div className='animate-pulse bg-gray-300 w-full h-auto aspect-w-1 aspect-h-1'></div>}
+                <img
+                  src={data?.Image}
+                  alt='Featured Image'
+                  className={`w-full h-auto transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                  onLoad={() => setImageLoaded(true)}
+                />
               </div>
-              <div className='text-start md:px-10 px-5'>
-                <h1 className='font-bold text-center text-blue mb-5 text-2xl sm:text-3xl'>{data?.Title}</h1>
-                <div className='space-y-4 text-blue-light lg:mb-28 mb-20'>
-                  <p>{data?.Content}</p>
+              {isContentReady ? (
+                <div className='text-start md:px-10 px-5'>
+                  <h1 className='font-bold text-center text-blue mb-5 text-2xl sm:text-3xl'>{data?.Title}</h1>
+                  <div className='space-y-4 text-blue-light lg:mb-28 mb-20'>
+                    <p>{data?.Content}</p>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className='animate-pulse w-full h-40 rounded-lg'></div>
+              )}
             </div>
           </div>
         </main>
