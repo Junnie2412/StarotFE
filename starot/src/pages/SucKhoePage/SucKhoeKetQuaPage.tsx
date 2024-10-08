@@ -59,7 +59,7 @@ export default function SucKhoeKetQuaPage() {
               {isContentReady ? (
                 <div className='text-start md:px-10 px-5'>
                   <h1 className='font-bold text-center text-blue mb-5 text-2xl sm:text-3xl'>{data?.Title}</h1>
-                  <div className='space-y-4 text-blue-light lg:mb-28 mb-20'>
+                  <div className='space-y-10 text-blue-light lg:mb-28 mb-20 leading-[2]'>
                     <p>{data?.Content}</p>
                   </div>
                 </div>
