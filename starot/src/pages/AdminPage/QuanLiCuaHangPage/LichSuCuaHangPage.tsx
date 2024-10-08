@@ -6,7 +6,7 @@ export default function LichSuCuaHangPage() {
     {
       id: '#15270',
       date: '16/06/2024',
-      service: 'Gói trải bài tổng quan tuần',
+      service: 'Red Jasper x1 Aquamarine x1',
       amount: '150,000 VND',
       user: 'Khang',
       email: 'user1@gmail.com',
@@ -26,7 +26,7 @@ export default function LichSuCuaHangPage() {
     {
       id: '#15272',
       date: '8/06/2024',
-      service: 'Gói trải bài tổng quan tháng',
+      service: 'Red Jasper x1 Aquamarine x1',
       amount: '300,000 VND',
       user: 'Phước',
       email: 'user3@gmail.com',
@@ -36,7 +36,7 @@ export default function LichSuCuaHangPage() {
     {
       id: '#15273',
       date: '16/06/2024',
-      service: 'Gói trải bài tổng quan năm',
+      service: 'Red Jasper x1 Aquamarine x1',
       amount: '400,000 VND',
       user: 'Nam',
       payment: 'Chuyển Khoản',
@@ -46,7 +46,7 @@ export default function LichSuCuaHangPage() {
     {
       id: '#15274',
       date: '16/06/2024',
-      service: 'Citrine x3',
+      service: 'Red Jasper x1 Aquamarine x1',
       amount: '150,000 VND',
       user: 'Hải',
       email: 'user5@gmail.com',
@@ -56,7 +56,7 @@ export default function LichSuCuaHangPage() {
     {
       id: '#15275',
       date: '16/06/2024',
-      service: 'Gói trải bài theo câu hỏi đơn',
+      service: 'Red Jasper x1 Aquamarine x1',
       amount: '80,000 VND',
       user: 'Nhu',
       email: 'user6@gmail.com',
@@ -66,7 +66,7 @@ export default function LichSuCuaHangPage() {
     {
       id: '#15276',
       date: '16/06/2024',
-      service: 'Gói trải bài tổng quan tuần',
+      service: 'Red Jasper x1 Aquamarine x1',
       amount: '150,000 VND',
       user: 'Thảo',
       email: 'user7@gmail.com',
@@ -76,7 +76,7 @@ export default function LichSuCuaHangPage() {
     {
       id: '#15277',
       date: '16/06/2024',
-      service: 'Gói trải bài tổng quan tháng',
+      service: 'Red Jasper x1 Aquamarine x1',
       amount: '200,000 VND',
       user: 'Vũ',
       email: 'user8@gmail.com',
@@ -86,7 +86,7 @@ export default function LichSuCuaHangPage() {
     {
       id: '#15278',
       date: '16/06/2024',
-      service: 'Amethyst x1',
+      service: 'Red Jasper x1 Aquamarine x1',
       amount: '110,000 VND',
       user: 'Tâm',
       email: 'user9@gmail.com',
@@ -96,7 +96,7 @@ export default function LichSuCuaHangPage() {
     {
       id: '#15279',
       date: '16/06/2024',
-      service: 'Gói trải bài tổng quan tháng',
+      service: 'Red Jasper x1 Aquamarine x1',
       amount: '200,000 VND',
       user: 'Lài',
       email: 'user10@gmail.com',
