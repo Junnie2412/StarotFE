@@ -17,7 +17,7 @@ export default function LichSuDichVuPage() {
     {
       id: '#15271',
       date: '16/06/2024',
-      service: 'Red Jasper x1 Aquamarine x1',
+      service: 'Gói trải bài tổng quan năm',
       amount: '100,000 VND',
       user: 'Kiên',
       email: 'user2@gmail.com',
@@ -50,7 +50,7 @@ export default function LichSuDichVuPage() {
     {
       id: '#15274',
       date: '16/06/2024',
-      service: 'Citrine x3',
+      service: 'Gói trải bài tổng quan năm',
       amount: '150,000 VND',
       user: 'Hải',
       email: 'user5@gmail.com',
@@ -94,7 +94,7 @@ export default function LichSuDichVuPage() {
     {
       id: '#15278',
       date: '16/06/2024',
-      service: 'Amethyst x1',
+      service: 'Gói trải bài tổng quan năm',
       amount: '110,000 VND',
       user: 'Tâm',
       email: 'user9@gmail.com',

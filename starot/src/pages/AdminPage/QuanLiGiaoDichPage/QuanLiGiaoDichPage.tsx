@@ -147,63 +147,63 @@ export default function QuanLiGiaoDichPage() {
                 <tr>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
                     Id
                   </th>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
                     Mã giao dịch
                   </th>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
                     Thời gian
                   </th>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
                     Ngày/Tháng/Năm
                   </th>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
                     Nội dung
                   </th>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
                     Tổng tiền
                   </th>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
                     Tên
                   </th>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
                     Email
                   </th>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
-                    Trạng thái
+                    Tình Trạng
                   </th>
                   <th
                     scope='col'
-                    className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                    className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                   >
-                    Phản hồi
+                    Phân Loại
                   </th>
                 </tr>
               </thead>
