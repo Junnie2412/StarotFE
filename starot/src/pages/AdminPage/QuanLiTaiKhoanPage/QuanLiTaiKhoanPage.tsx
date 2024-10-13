@@ -98,8 +98,10 @@ export default function QuanLiTaiKhoanPage() {
   const [searchTerm, setSearchTerm] = useState('')
   const [sortOrder, setSortOrder] = useState('Mới nhất')
 
+  const filteredUsers = users.filter((user) => user.name.toLowerCase().includes(searchTerm.toLowerCase()))
+
   return (
-    <div className='min-h-screen bg-bg-admin'>
+    <div className='min-h-screen bg-bg-admin pb-16 lg:px-0 px-5'>
       <HeaderAdmin />
       <main className='container mx-auto mt-20 p-6 bg-white rounded-lg shadow-lg lg:p-16'>
         <div className='flex flex-col lg:flex-row justify-between mb-6 lg:space-x-4'>
@@ -175,7 +177,7 @@ export default function QuanLiTaiKhoanPage() {
               </tr>
             </thead>
             <tbody className='divide-y divide-gray-200'>
-              {users.map((user) => (
+              {filteredUsers.map((user) => (
                 <tr key={user.id}>
                   <td className='px-6 py-4 whitespace-nowrap text-sm text-blue-light'>{user.id}</td>
                   <td className='px-6 py-4 whitespace-nowrap'>
