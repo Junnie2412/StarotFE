@@ -112,7 +112,7 @@ export default function QuanLiGiaoDichPage() {
   )
 
   return (
-    <div className='min-h-screen bg-bg-admin'>
+    <div className='min-h-screen bg-bg-admin pb-32 lg:px-0 px-5'>
       <HeaderAdmin />
       <div className='container mx-auto mt-20 p-6 bg-white rounded-lg shadow-lg lg:p-16'>
         <div>
