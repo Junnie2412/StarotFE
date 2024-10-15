@@ -35,7 +35,7 @@ export default function AdminLoginPage() {
       const matchingAdmin = admins.find((admin) => admin.Gmail === email && admin.Password === password)
 
       if (matchingAdmin) {
-        setAdmin(matchingAdmin) // Store admin data in context
+        setAdmin(matchingAdmin)
         navigate('/admin/thong-ke')
       } else {
         setError('Invalid email or password')
