@@ -50,7 +50,7 @@ export default function Footer() {
                 DOWNLOAD ANDROID
               </Link>
               <div className='w-full flex flex-row'>
-                <div className='bg-blue-200  mr-2 rounded-md w-1/5'>
+                <div className='mr-2 rounded-md w-1/5'>
                   <Link to=''>
                     <img
                       src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FInstagramIcon.png?alt=media&token=00a767d8-a6a1-4d85-a326-ef51693d95eb'
@@ -59,19 +59,10 @@ export default function Footer() {
                     />
                   </Link>
                 </div>
-                <div className='bg-blue-200  mr-2 rounded-md w-1/5'>
+                <div className='mr-2 rounded-md w-1/5'>
                   <Link to=''>
                     <img
                       src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FFacebookIcon.png?alt=media&token=497b9426-cde0-45e4-bd83-028c44483a5e'
-                      className='h-4 md:mt-4 mt-4'
-                      alt='Starot Logo'
-                    />
-                  </Link>
-                </div>
-                <div className='bg-blue-200  mr-2 rounded-md w-1/5'>
-                  <Link to=''>
-                    <img
-                      src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FTikTokIcon.png?alt=media&token=128e6adc-ee35-4960-9284-a2dd5a27c191'
                       className='h-4 md:mt-4 mt-4'
                       alt='Starot Logo'
                     />

@@ -1,15 +1,17 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 import { useEffect, useState } from 'react'
-import { BoiBai } from '../../types/BoiBai.type'
 import { fetchDocumentById } from '../../apis/boiBai.api'
+import { BoiBai } from '../../types/BoiBai.type'
+import { FiArrowLeft } from 'react-icons/fi'
 
 export default function TinhYeuKetQuaPage() {
   const { id } = useParams<{ id: string }>()
   const [data, setData] = useState<BoiBai | null>(null)
   const [imageLoaded, setImageLoaded] = useState(false)
   const [dataLoaded, setDataLoaded] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const getData = async () => {
@@ -32,6 +34,10 @@ export default function TinhYeuKetQuaPage() {
 
   const isContentReady = dataLoaded && imageLoaded
 
+  const handleReturn = () => {
+    navigate(-1)
+  }
+
   return (
     <>
       <div
@@ -44,8 +50,8 @@ export default function TinhYeuKetQuaPage() {
         }}
       >
         <Header />
-        <main className='flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12'>
-          <div className='w-full max-w-4xl'>
+        <main className='flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 lg:pb-36'>
+          <div className='w-full max-w-4xl relative'>
             <div className='flex flex-col items-center'>
               <div className='w-[60%] md:w-[46.67%] lg:w-[35%] mb-24 lg:mb-20 lg:mt-24'>
                 {!imageLoaded && <div className='animate-pulse bg-gray-300 w-full h-auto aspect-w-1 aspect-h-1'></div>}
@@ -67,6 +73,12 @@ export default function TinhYeuKetQuaPage() {
                 <div className='animate-pulse w-full h-40 rounded-lg'></div>
               )}
             </div>
+            <button
+              onClick={handleReturn}
+              className='absolute bottom-0 right-0 border border-blue rounded flex items-center justify-center w-16 h-8 text-blue hover:text-white hover:bg-blue transition duration-300'
+            >
+              <FiArrowLeft size={20} />
+            </button>
           </div>
         </main>
       </div>
