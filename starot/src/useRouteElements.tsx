@@ -19,89 +19,33 @@ import QuanLiCuaHangPage from './pages/AdminPage/QuanLiCuaHangPage/QuanLiCuaHang
 import QuanLiGiaoDichPage from './pages/AdminPage/QuanLiGiaoDichPage/QuanLiGiaoDichPage'
 import LichSuDichVuPage from './pages/AdminPage/QuanLiDichVuPage/LichSuDichVuPage'
 import LichSuCuaHangPage from './pages/AdminPage/QuanLiCuaHangPage/LichSuCuaHangPage'
+import { usePageTitle } from './hook/usePageTitle'
 
 export default function useRouteElements() {
+  usePageTitle()
+
   const routeElements = useRoutes([
-    {
-      path: '/',
-      element: <HomePage />
-    },
-    {
-      path: '/dich-vu',
-      element: <DichVuPage />
-    },
-    {
-      path: '/lien-he',
-      element: <LienHePage />
-    },
-    {
-      path: '/chinh-sach',
-      element: <ChinhSachPage />
-    },
-    {
-      path: '/ve-starot',
-      element: <VeStarotPage />
-    },
-    {
-      path: '/tram-chua-lanh',
-      element: <BoiBaiPage />
-    },
-    {
-      path: '/tram-chua-lanh/tinh-yeu',
-      element: <TinhYeuPage />
-    },
-    {
-      path: '/tram-chua-lanh/cong-viec',
-      element: <CongViecPage />
-    },
-    {
-      path: '/tram-chua-lanh/suc-khoe',
-      element: <SucKhoePage />
-    },
-    {
-      path: '/tram-chua-lanh/tinh-yeu/ket-qua/:id',
-      element: <TinhYeuKetQuaPage />
-    },
-    {
-      path: '/tram-chua-lanh/cong-viec/ket-qua/:id',
-      element: <CongViecKetQuaPage />
-    },
-    {
-      path: '/tram-chua-lanh/suc-khoe/ket-qua/:id',
-      element: <SucKhoeKetQuaPage />
-    },
-    {
-      path: '/admin',
-      element: <AdminLoginPage />
-    },
-    {
-      path: '/admin/thong-ke',
-      element: <ThongKePage />
-    },
-    {
-      path: '/admin/quan-li-dich-vu',
-      element: <QuanLiDichVuPage />
-    },
-    {
-      path: '/admin/quan-li-tai-khoan',
-      element: <QuanLiTaiKhoanPage />
-    },
-    {
-      path: '/admin/quan-li-cua-hang',
-      element: <QuanLiCuaHangPage />
-    },
-    {
-      path: '/admin/quan-li-giao-dich',
-      element: <QuanLiGiaoDichPage />
-    },
-    {
-      path: '/admin/quan-li-dich-vu/lich-su-dich-vu',
-      element: <LichSuDichVuPage />
-    },
-    {
-      path: '/admin/quan-li-cua-hang/lich-su-cua-hang',
-      element: <LichSuCuaHangPage />
-    }
+    { path: '/', element: <HomePage /> },
+    { path: '/dich-vu', element: <DichVuPage /> },
+    { path: '/lien-he', element: <LienHePage /> },
+    { path: '/chinh-sach', element: <ChinhSachPage /> },
+    { path: '/ve-starot', element: <VeStarotPage /> },
+    { path: '/tram-chua-lanh', element: <BoiBaiPage /> },
+    { path: '/tram-chua-lanh/tinh-yeu', element: <TinhYeuPage /> },
+    { path: '/tram-chua-lanh/cong-viec', element: <CongViecPage /> },
+    { path: '/tram-chua-lanh/suc-khoe', element: <SucKhoePage /> },
+    { path: '/tram-chua-lanh/tinh-yeu/ket-qua/:id', element: <TinhYeuKetQuaPage /> },
+    { path: '/tram-chua-lanh/cong-viec/ket-qua/:id', element: <CongViecKetQuaPage /> },
+    { path: '/tram-chua-lanh/suc-khoe/ket-qua/:id', element: <SucKhoeKetQuaPage /> },
+    { path: '/admin', element: <AdminLoginPage /> },
+    { path: '/admin/thong-ke', element: <ThongKePage /> },
+    { path: '/admin/quan-li-dich-vu', element: <QuanLiDichVuPage /> },
+    { path: '/admin/quan-li-tai-khoan', element: <QuanLiTaiKhoanPage /> },
+    { path: '/admin/quan-li-cua-hang', element: <QuanLiCuaHangPage /> },
+    { path: '/admin/quan-li-giao-dich', element: <QuanLiGiaoDichPage /> },
+    { path: '/admin/quan-li-dich-vu/lich-su-dich-vu', element: <LichSuDichVuPage /> },
+    { path: '/admin/quan-li-cua-hang/lich-su-cua-hang', element: <LichSuCuaHangPage /> }
   ])
+
   return routeElements
 }
