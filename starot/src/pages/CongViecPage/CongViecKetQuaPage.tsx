@@ -75,7 +75,7 @@ export default function CongViecKetQuaPage() {
             </div>
             <button
               onClick={handleReturn}
-              className='absolute bottom-0 right-0 border border-blue rounded flex items-center justify-center w-16 h-8 text-blue hover:text-white hover:bg-blue transition duration-300'
+              className='absolute bottom-0 right-0 border border-blue hover:border-white rounded flex items-center justify-center w-16 h-8 text-blue hover:text-white hover:bg-blue transition duration-300'
             >
               <FiArrowLeft size={20} />
             </button>

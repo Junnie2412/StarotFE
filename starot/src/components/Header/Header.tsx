@@ -43,11 +43,11 @@ export default function Header() {
           </svg>
         </button>
         <div className={`md:hidden w-full ${isOpen ? '' : 'hidden'}`} id='navbar-default'>
-          <ul className='font-medium flex flex-col p-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700'>
+          <ul className='font-medium flex flex-col p-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white'>
             <li>
               <Link
                 to='https://www.apple.com/vn/app-store/'
-                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
+                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-blue dark:hover:text-white md:dark:hover:bg-transparent'
                 aria-current='page'
               >
                 DOWNLOAD IOS
@@ -56,7 +56,7 @@ export default function Header() {
             <li>
               <Link
                 to='https://play.google.com/store/games?device=windows&utm_source=apac_med&hl=vi-VN&utm_medium=hasem&utm_content=Jan0324&utm_campaign=Evergreen&pcampaignid=MKT-EDR-apac-vn-1707570-med-hasem-py-Evergreen-Jan0324-Text_Search_BKWS-BKWS%7CONSEM_kwid_43700078803271722_creativeid_694706148392_device_c&gad_source=1&gclid=Cj0KCQjwurS3BhCGARIsADdUH50GILv7Bu8ivLdr6tACLTZMHOSUN1jOodXaFX3w5gUOKpWq5fWzArUaAuwcEALw_wcB&gclsrc=aw.ds&pli=1'
-                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
+                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-blue dark:hover:text-white md:dark:hover:bg-transparent'
               >
                 DOWNLOAD ANDROID
               </Link>
@@ -64,7 +64,7 @@ export default function Header() {
             <li>
               <Link
                 to='/tram-chua-lanh'
-                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
+                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-blue dark:hover:text-white md:dark:hover:bg-transparent'
               >
                 TRẠM CHỮA LÀNH
               </Link>
@@ -72,7 +72,7 @@ export default function Header() {
             <li>
               <Link
                 to='/dich-vu'
-                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
+                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-blue dark:hover:text-white md:dark:hover:bg-transparent'
               >
                 DỊCH VỤ
               </Link>
@@ -80,7 +80,7 @@ export default function Header() {
             <li>
               <Link
                 to='/lien-he'
-                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
+                className='block py-2 px-3 text-blue rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-blue dark:hover:text-white md:dark:hover:bg-transparent'
               >
                 LIÊN HỆ
               </Link>
