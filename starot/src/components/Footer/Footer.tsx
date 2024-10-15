@@ -51,7 +51,7 @@ export default function Footer() {
               </Link>
               <div className='w-full flex flex-row'>
                 <div className='mr-2 rounded-md w-1/5'>
-                  <Link to=''>
+                  <Link to='https://www.instagram.com/starot_1/?fbclid=IwY2xjawF6nYxleHRuA2FlbQIxMAABHdtx9RtSSbnVfnELIKlqyTwZHNyC-2sOedUQJ76h-ESyv8taZq-FYgbZxw_aem_9wOG6MYj3DDM6UwryFmB8Q'>
                     <img
                       src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FInstagramIcon.png?alt=media&token=00a767d8-a6a1-4d85-a326-ef51693d95eb'
                       className='h-4 md:mt-4 mt-4'
@@ -60,7 +60,7 @@ export default function Footer() {
                   </Link>
                 </div>
                 <div className='mr-2 rounded-md w-1/5'>
-                  <Link to=''>
+                  <Link to='https://www.facebook.com/profile.php?id=61565914032381'>
                     <img
                       src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FFacebookIcon.png?alt=media&token=497b9426-cde0-45e4-bd83-028c44483a5e'
                       className='h-4 md:mt-4 mt-4'
