@@ -27,10 +27,10 @@ export const useAdminLogin = () => {
     setIsLoading(true)
     setError('')
 
-    const matchingAdmin = admins.find((admin) => admin.Gmail === email && admin.Password === password)
+    const matchingAdmin = admins.find((admin) => admin.email === email && admin.password === password)
 
     if (matchingAdmin) {
-      setAdminData(matchingAdmin) // Store admin data in context
+      setAdminData(matchingAdmin)
       navigate('/admin/thong-ke', { state: { admin: matchingAdmin } })
     } else {
       setError('Invalid email or password')

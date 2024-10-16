@@ -8,5 +8,6 @@ export type Admin = {
   dateOfBirth: string | null
   gender: string
   image: string
+  password: string
   balance: number
 }
