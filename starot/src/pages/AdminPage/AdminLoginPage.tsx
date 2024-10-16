@@ -77,6 +77,7 @@ export default function AdminLoginPage() {
             <input
               id='password'
               type='password'
+              placeholder='password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
