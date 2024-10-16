@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Admin } from '../../types/Admin.type'
+import { login } from '../../apis/authen.api'
 import { useAdmin } from '../../context/AdminContext'
-import { fetchAdmins } from '../../apis/auth.api'
+import axios from 'axios'
 
 export default function AdminLoginPage() {
   const [email, setEmail] = useState('')
@@ -11,20 +11,6 @@ export default function AdminLoginPage() {
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
   const { setAdmin } = useAdmin()
-  const [admins, setAdmins] = useState<Admin[]>([])
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await fetchAdmins()
-        setAdmins(data)
-      } catch (error) {
-        console.error('Error fetching admins:', error)
-      }
-    }
-
-    fetchData()
-  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -32,17 +18,34 @@ export default function AdminLoginPage() {
     setError('')
 
     try {
-      const matchingAdmin = admins.find((admin) => admin.Gmail === email && admin.Password === password)
+      const loginResponse = await login(email, password)
 
-      if (matchingAdmin) {
-        setAdmin(matchingAdmin)
-        navigate('/admin/thong-ke')
+      if (loginResponse && loginResponse.status === 200) {
+        const { token, refreshToken } = loginResponse.data
+
+        localStorage.setItem('token', token)
+        localStorage.setItem('refreshToken', refreshToken)
+
+        const userResponse = await axios.get('https://exestarotapi20241007212754.azurewebsites.net/api/v1/user/info', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+
+        if (userResponse && userResponse.status === 200) {
+          const userData = userResponse.data.data
+
+          setAdmin(userData)
+          navigate('/admin/thong-ke')
+        } else {
+          setError('Failed to fetch user data')
+        }
       } else {
         setError('Invalid email or password')
       }
     } catch (error) {
       setError('An error occurred. Please try again.')
-      console.error(error)
+      console.error('Login error:', error)
     } finally {
       setIsLoading(false)
     }
@@ -84,7 +87,7 @@ export default function AdminLoginPage() {
           <button
             type='submit'
             disabled={isLoading}
-            className='w-full bg-blue text-white py-4 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50'
+            className='w-full bg-blue text-white py-4 px-4 border rounded-md hover:bg-white hover:text-blue hover:border-blue focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50'
           >
             {isLoading ? 'Logging in...' : 'Login'}
           </button>
