@@ -65,11 +65,13 @@ const HeaderAdmin: React.FC = () => {
             aria-haspopup='true'
           >
             <img
-              src={`${admin.Avata}?height=32&width=32`}
-              alt={admin.FullName}
+              src={`${admin.image}?height=32&width=32`}
+              alt={admin.firstName}
               className='h-8 w-8 rounded-full object-cover'
             />
-            <span className='hidden sm-md:inline-block'>{admin.FullName}</span>
+            <span className='hidden sm-md:inline-block'>
+              {admin.firstName} {admin.lastName}
+            </span>
             <svg className='h-4 w-4 fill-current' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
               <path d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' />
             </svg>
@@ -77,8 +79,10 @@ const HeaderAdmin: React.FC = () => {
           {dropdownOpen && (
             <div className='absolute right-0 mt-2 w-64 bg-white rounded-md shadow-lg z-10'>
               <div className='p-4 border-b'>
-                <p className='text-sm font-medium text-gray-900'>{admin.FullName}</p>
-                <p className='text-sm text-gray-500'>{admin.Gmail}</p>
+                <p className='text-sm font-medium text-gray-900'>
+                  {admin.firstName} {admin.lastName}
+                </p>
+                <p className='text-sm text-gray-500'>{admin.email}</p>
               </div>
               <ul className='py-2'>
                 {menuItems.map((item) => (

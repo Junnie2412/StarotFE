@@ -1,4 +1,4 @@
-import { createContext, useState, useContext, ReactNode } from 'react'
+import { createContext, useState, useContext, ReactNode, useEffect } from 'react'
 import { Admin } from '../types/Admin.type'
 
 interface AdminContextProps {
@@ -19,6 +19,21 @@ export const useAdmin = () => {
 
 export const AdminProvider = ({ children }: { children: ReactNode }) => {
   const [admin, setAdmin] = useState<Admin | null>(null)
+
+  useEffect(() => {
+    const storedAdmin = localStorage.getItem('admin')
+    if (storedAdmin) {
+      setAdmin(JSON.parse(storedAdmin))
+    }
+  }, [])
+
+  useEffect(() => {
+    if (admin) {
+      localStorage.setItem('admin', JSON.stringify(admin))
+    } else {
+      localStorage.removeItem('admin')
+    }
+  }, [admin])
 
   return <AdminContext.Provider value={{ admin, setAdmin }}>{children}</AdminContext.Provider>
 }

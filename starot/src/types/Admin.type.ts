@@ -1,8 +1,12 @@
 export type Admin = {
   id: string
-  Avata: string
-  Gmail: string
-  Password: string
-  UserName: string
-  FullName: string
+  email: string
+  role: string
+  firstName: string
+  lastName: string
+  phone: string | null
+  dateOfBirth: string | null
+  gender: string
+  image: string
+  balance: number
 }
