@@ -58,11 +58,11 @@ export default function BlogBai1Page() {
               </p>
             </div>
             <div className='flex flex-col lg:flex-row px-12 justify-center lg:space-x-20 my-32'>
-              <div className='flex flex-col items-center mb-8 lg:mb-0 w-8/12'>
+              <div className='flex flex-col items-center justify-center mb-8 lg:mb-0 w-full lg:w-8/12'>
                 <img
                   src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FGocDoChuQuan.png?alt=media&token=dc4d682a-017a-4257-b1b0-02d07756491c'
                   alt='Ve Starot Background'
-                  className='w-1/3 h-auto'
+                  className='w-2/3 lg:w-1/3 h-auto'
                   style={{ maxHeight: '300px', objectFit: 'cover' }}
                 />
                 <div className='text-center mt-4'>
@@ -76,11 +76,11 @@ export default function BlogBai1Page() {
                 </div>
               </div>
 
-              <div className='flex flex-col items-center mb-8 lg:mb-0 w-8/12'>
+              <div className='flex flex-col items-center justify-center mb-8 lg:mb-0 w-full lg:w-8/12'>
                 <img
                   src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FTrucGiac.png?alt=media&token=0f557e9d-27f0-4bcf-a189-0fb6ee0094df'
                   alt='Ve Starot Background'
-                  className='w-1/3 h-auto'
+                  className='w-2/3 lg:w-1/3 h-auto'
                   style={{ maxHeight: '300px', objectFit: 'cover' }}
                 />
                 <div className='text-center mt-4'>
