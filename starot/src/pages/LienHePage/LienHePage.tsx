@@ -5,7 +5,7 @@ export default function LienHePage() {
   return (
     <>
       <div
-        className='bg-cover bg-no-repeat flex flex-col min-h-screen' // Added flex and min-h-screen
+        className='bg-cover bg-no-repeat flex flex-col min-h-screen'
         style={{
           backgroundImage:
             "url('https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FLienHeBG.png?alt=media&token=de7de1d4-a5d0-4b54-9ebc-499de1950d15')",

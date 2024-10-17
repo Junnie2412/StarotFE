@@ -20,6 +20,12 @@ import QuanLiGiaoDichPage from './pages/AdminPage/QuanLiGiaoDichPage/QuanLiGiaoD
 import LichSuDichVuPage from './pages/AdminPage/QuanLiDichVuPage/LichSuDichVuPage'
 import LichSuCuaHangPage from './pages/AdminPage/QuanLiCuaHangPage/LichSuCuaHangPage'
 import { usePageTitle } from './hook/usePageTitle'
+import BlogPage from './pages/BlogsPage/Blogs'
+import BlogBai1Page from './pages/BlogsPage/BlogBai1page/BlogBai1'
+import BlogBai2Page from './pages/BlogsPage/BlogBai2Page/BlogBai2'
+import BlogBai3Page from './pages/BlogsPage/BlogBai3Page/BlogBai3'
+import BlogBai4Page from './pages/BlogsPage/BlogBai4Page/BlogBai4'
+import BlogBai5Page from './pages/BlogsPage/BlogBai5Page/BlogBai5'
 
 export default function useRouteElements() {
   usePageTitle()
@@ -30,6 +36,12 @@ export default function useRouteElements() {
     { path: '/lien-he', element: <LienHePage /> },
     { path: '/chinh-sach', element: <ChinhSachPage /> },
     { path: '/ve-starot', element: <VeStarotPage /> },
+    { path: '/blog', element: <BlogPage /> },
+    { path: '/blog/bai1', element: <BlogBai1Page /> },
+    { path: '/blog/bai2', element: <BlogBai2Page /> },
+    { path: '/blog/bai3', element: <BlogBai3Page /> },
+    { path: '/blog/bai4', element: <BlogBai4Page /> },
+    { path: '/blog/bai5', element: <BlogBai5Page /> },
     { path: '/tram-chua-lanh', element: <BoiBaiPage /> },
     { path: '/tram-chua-lanh/tinh-yeu', element: <TinhYeuPage /> },
     { path: '/tram-chua-lanh/cong-viec', element: <CongViecPage /> },
