@@ -9,7 +9,8 @@ export default {
       colors: {
         blue: '#3014BA',
         'blue-light': '#392C7A',
-        'bg-admin': '#fbfbfb'
+        'bg-admin': '#fbfbfb',
+        'bg-blog': '#FBFBFB'
       },
       screens: {
         'sm-md': '900px',
