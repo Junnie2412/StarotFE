@@ -20,14 +20,14 @@ export default function BlogBai2Page() {
               <h1 className='font-bold text-blue mb-4 text-center mt-10' style={{ fontSize: 25 }}>
                 Tarot có thể tiên đoán tương lai không?
               </h1>
-              <div className='px-20 text-justify'>
+              <div className='lg:px-20 px-5 text-justify'>
                 <p className=' text-blue-light'>
                   Câu trả lời ngắn gọn: Không hoàn toàn. Tarot không phải là một quả cầu pha lê có thể cho bạn biết
                   chính xác những gì sẽ xảy ra trong tương lai. Thay vào đó, Tarot hoạt động như một tấm gương phản
                   chiếu lại những suy nghĩ, cảm xúc và năng lượng hiện tại của bạn.
                 </p>
               </div>
-              <div className='px-20 text-justify mt-10'>
+              <div className='lg:px-20 px-5 text-justify mt-10'>
                 <h1 className='font-bold text-blue mb-4 text-center mt-10' style={{ fontSize: 15 }}>
                   TAROT NHƯ MỘT NGƯỜI BẠN ĐỒNG HÀNH
                 </h1>
@@ -36,7 +36,7 @@ export default function BlogBai2Page() {
                   Từ đó, bạn có thể đưa ra những quyết định sáng suốt hơn.
                 </p>
               </div>
-              <div className='px-20 text-justify mt-10'>
+              <div className='lg:px-20 px-5 text-justify mt-10'>
                 <h1 className='font-bold text-blue mb-4 text-center mt-10' style={{ fontSize: 15 }}>
                   TAROT KHÔNG PHẢI LÀ ĐỊNH MỆNH
                 </h1>
@@ -51,10 +51,10 @@ export default function BlogBai2Page() {
                   alt='Featured Image'
                 />
               </div>
-              <h1 className='font-bold text-blue mb-4 px-16 text-center mt-10' style={{ fontSize: 25 }}>
+              <h1 className='font-bold text-blue mb-4 px-5 text-center mt-10 lg:px-16' style={{ fontSize: 25 }}>
                 Tại sao nhiều người tin rằng Tarot có thể tiên đoán tương lai?
               </h1>
-              <div className='px-20 text-justify mt-10'>
+              <div className='lg:px-20 px-5 text-justify mt-10'>
                 <h1 className='font-bold text-blue mb-4 text-center mt-10' style={{ fontSize: 15 }}>
                   HIỆU ỨNG BARNUM
                 </h1>
@@ -63,7 +63,7 @@ export default function BlogBai2Page() {
                   Điều này khiến người xem cảm thấy như bài Tarot đang nói chính xác về họ.
                 </p>
               </div>
-              <div className='px-20 text-justify mt-10'>
+              <div className='lg:px-20 px-5 text-justify mt-10'>
                 <h1 className='font-bold text-blue mb-4 text-center mt-10' style={{ fontSize: 15 }}>
                   SỰ MONG ĐỢI
                 </h1>
@@ -72,7 +72,7 @@ export default function BlogBai2Page() {
                   bài Tarot.
                 </p>
               </div>
-              <div className='px-20 text-justify mt-10'>
+              <div className='lg:px-20 px-5 text-justify mt-10'>
                 <h1 className='font-bold text-blue mb-4 text-center mt-10' style={{ fontSize: 15 }}>
                   KINH NGHIỆM CÁ NHÂN
                 </h1>
