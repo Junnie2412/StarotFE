@@ -1,112 +1,40 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import HeaderAdmin from '../../../components/HeaderAdmin/HeaderAdmin'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import axios from 'axios'
+import { User } from '../../../types/User.type'
 
 export default function QuanLiTaiKhoanPage() {
-  const [users, setUsers] = useState([
-    {
-      id: 1,
-      name: 'Khang',
-      email: 'user1@gmail.com',
-      phone: '0346589167',
-      dob: '06/05/2003',
-      gender: 'Nam',
-      role: 'Admin'
-    },
-    {
-      id: 2,
-      name: 'Kiên',
-      email: 'user2@gmail.com',
-      phone: '0346589167',
-      dob: '06/05/2003',
-      gender: 'Nữ',
-      role: 'Khách hàng'
-    },
-    {
-      id: 3,
-      name: 'Phước',
-      email: 'user3@gmail.com',
-      phone: '0346589167',
-      dob: '06/05/2003',
-      gender: 'Nữ',
-      role: 'Reader'
-    },
-    {
-      id: 4,
-      name: 'Nam',
-      email: 'user4@gmail.com',
-      phone: '0346589167',
-      dob: '06/05/2003',
-      gender: 'Nữ',
-      role: 'Khách hàng'
-    },
-    {
-      id: 5,
-      name: 'Hải',
-      email: 'user5@gmail.com',
-      phone: '0346589167',
-      dob: '06/05/2003',
-      gender: 'Nữ',
-      role: 'Reader'
-    },
-    {
-      id: 6,
-      name: 'Nhu',
-      email: 'user6@gmail.com',
-      phone: '0346589167',
-      dob: '06/05/2003',
-      gender: 'Nam',
-      role: 'Admin'
-    },
-    {
-      id: 7,
-      name: 'Thảo',
-      email: 'user7@gmail.com',
-      phone: '0346589167',
-      dob: '06/05/2003',
-      gender: 'Nữ',
-      role: 'Khách hàng'
-    },
-    {
-      id: 8,
-      name: 'Vũ',
-      email: 'user8@gmail.com',
-      phone: '0346589167',
-      dob: '06/05/2003',
-      gender: 'Nam',
-      role: 'Khách hàng'
-    },
-    {
-      id: 9,
-      name: 'Tâm',
-      email: 'user9@gmail.com',
-      phone: '0346589167',
-      dob: '06/05/2003',
-      gender: 'Nam',
-      role: 'Khách hàng'
-    },
-    {
-      id: 10,
-      name: 'Lài',
-      email: 'user10@gmail.com',
-      phone: '0346589167',
-      dob: '06/05/2003',
-      gender: 'Nữ',
-      role: 'Khách hàng'
+  const [users, setUsers] = useState<User[]>([])
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await axios.get('https://exestarotapi20241007212754.azurewebsites.net/api/v1/user')
+        setUsers(response.data.data)
+      } catch (error) {
+        console.error('Error fetching user data:', error)
+      }
     }
-  ])
+
+    fetchUsers()
+  }, [])
 
   const [searchTerm, setSearchTerm] = useState('')
   const [sortOrder, setSortOrder] = useState('Mới nhất')
-  const [activeDropdown, setActiveDropdown] = useState<number | null>(null)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [editModalOpen, setEditModalOpen] = useState(false)
   const [deleteModalOpen, setDeleteModalOpen] = useState(false)
   const [currentUser, setCurrentUser] = useState<(typeof users)[0] | null>(null)
 
-  const filteredUsers = users.filter((user) => user.name.toLowerCase().includes(searchTerm.toLowerCase()))
+  const filteredUsers = users.filter(
+    (user) =>
+      user.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      user.lastName.toLowerCase().includes(searchTerm.toLowerCase())
+  )
 
-  const toggleDropdown = (id: number) => {
+  const toggleDropdown = (id: string) => {
     setActiveDropdown(activeDropdown === id ? null : id)
   }
 
@@ -138,16 +66,28 @@ export default function QuanLiTaiKhoanPage() {
     }
   }
 
-  const confirmDelete = () => {
+  const confirmDelete = async () => {
     if (currentUser) {
-      const updatedUsers = users.filter((user) => user.id !== currentUser.id)
-      if (updatedUsers.length < users.length) {
-        setUsers(updatedUsers)
-        setDeleteModalOpen(false)
-        setCurrentUser(null)
-        toast.success('User deleted successfully!')
-      } else {
-        toast.error('Failed to delete user.')
+      try {
+        const response = await fetch(
+          `https://exestarotapi20241007212754.azurewebsites.net/api/v1/user/${currentUser.id}`,
+          {
+            method: 'DELETE'
+          }
+        )
+
+        if (response.ok) {
+          const updatedUsers = users.filter((user) => user.id !== currentUser.id)
+          setUsers(updatedUsers)
+          setDeleteModalOpen(false)
+          setCurrentUser(null)
+          toast.success('User deleted successfully!')
+        } else {
+          toast.error('Failed to delete user.')
+        }
+      } catch (error) {
+        console.error('Error deleting user:', error)
+        toast.error('An error occurred while deleting the user.')
       }
     } else {
       toast.error('No user selected for deletion.')
@@ -254,16 +194,18 @@ export default function QuanLiTaiKhoanPage() {
                           />
                         </div>
                         <div className='ml-4'>
-                          <div className='text-sm font-medium text-gray-900'>{user.name}</div>
+                          <div className='text-sm font-medium text-gray-900'>
+                            {user.firstName} {user.lastName}
+                          </div>
                         </div>
                       </div>
                     </td>
                     <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>{user.email}</td>
                     <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>{user.phone}</td>
-                    <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>{user.dob}</td>
+                    <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>{user.dateOfBirth}</td>
                     <td className='px-6 py-4 whitespace-nowrap text-sm text-blue'>
                       <span
-                        className={`px-2 inline-flex text-xs leading-5 rounded-full ${user.gender === 'Nam' ? 'bg-blue text-white' : 'bg-pink-100 text-pink-800'}`}
+                        className={`px-2 inline-flex text-xs leading-5 rounded-full ${user.gender === 'Male' ? 'bg-blue text-white' : 'bg-pink-100 text-pink-800'}`}
                       >
                         {user.gender}
                       </span>
@@ -272,7 +214,7 @@ export default function QuanLiTaiKhoanPage() {
                       <span
                         className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full
                       ${user.role === 'Admin' ? 'border border-blue text-blue-500' : ''}
-                      ${user.role === 'Khách hàng' ? 'border border-green-500 text-green-500' : ''}
+                      ${user.role === 'Customer' ? 'border border-green-500 text-green-500' : ''}
                       ${user.role === 'Reader' ? 'border border-pink-500 text-pink-500' : ''}`}
                       >
                         {user.role}
@@ -323,8 +265,8 @@ export default function QuanLiTaiKhoanPage() {
                   <input
                     id='name'
                     type='text'
-                    value={currentUser.name}
-                    onChange={(e) => setCurrentUser({ ...currentUser, name: e.target.value })}
+                    value={currentUser.firstName}
+                    onChange={(e) => setCurrentUser({ ...currentUser, firstName: e.target.value })}
                     className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500'
                   />
                 </div>
@@ -359,8 +301,8 @@ export default function QuanLiTaiKhoanPage() {
                   <input
                     id='dob'
                     type='date'
-                    value={currentUser.dob}
-                    onChange={(e) => setCurrentUser({ ...currentUser, dob: e.target.value })}
+                    value={currentUser.dateOfBirth}
+                    onChange={(e) => setCurrentUser({ ...currentUser, dateOfBirth: e.target.value })}
                     className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500'
                   />
                 </div>
@@ -374,8 +316,8 @@ export default function QuanLiTaiKhoanPage() {
                     onChange={(e) => setCurrentUser({ ...currentUser, gender: e.target.value })}
                     className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500'
                   >
-                    <option value='Nam'>Nam</option>
-                    <option value='Nữ'>Nữ</option>
+                    <option value='Male'>Male</option>
+                    <option value='Female'>Female</option>
                   </select>
                 </div>
                 <div>
@@ -389,7 +331,7 @@ export default function QuanLiTaiKhoanPage() {
                     className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500'
                   >
                     <option value='Admin'>Admin</option>
-                    <option value='Khách hàng'>Khách hàng</option>
+                    <option value='Customer'>Customer</option>
                     <option value='Reader'>Reader</option>
                   </select>
                 </div>
