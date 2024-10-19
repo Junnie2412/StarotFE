@@ -1,9 +1,15 @@
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
+import { Helmet } from 'react-helmet-async'
 
 export default function ChinhSachPage() {
   return (
     <>
+      <Helmet>
+        <title>Chính Sách - Starot</title>
+        <meta name='description' content='Chính sách của Starot' />
+        <link rel='canonical' href='https://starotvn.com/chinh-sach' />
+      </Helmet>
       <div
         className='bg-cover bg-no-repeat flex flex-col min-h-screen' // Added flex and min-h-screen
         style={{

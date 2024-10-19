@@ -1,10 +1,21 @@
 import { Link } from 'react-router-dom'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
+import { Helmet } from 'react-helmet-async'
 
 export default function BoiBaiPage() {
   return (
     <>
+      <Helmet>
+        <title>Trạm Chữa Lành - Starot</title>
+        <meta
+          name='description'
+          content='Ngày hôm nay của bạn thế nào?
+
+Mong những lá bài này có thể xoa dịu tâm hồn bạn ^^'
+        />
+        <link rel='canonical' href='https://starotvn.com/tram-chua-lanh' />
+      </Helmet>
       <div
         className='bg-cover bg-no-repeat flex flex-col min-h-screen'
         style={{

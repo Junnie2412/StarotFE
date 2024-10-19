@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import HeaderAdmin from '../../../components/HeaderAdmin/HeaderAdmin'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { Helmet } from 'react-helmet-async'
 
 export default function QuanLiDichVuPage() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -187,6 +188,11 @@ export default function QuanLiDichVuPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Quản Lí Dịch Vụ - Starot</title>
+        <meta name='description' content='Admin Quản Lí Dịch Vụ' />
+        <link rel='canonical' href='https://starotvn.com/admin/quan-li-dich-vu' />
+      </Helmet>
       <ToastContainer
         position='top-right'
         autoClose={5000}

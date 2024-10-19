@@ -1,6 +1,7 @@
 import { CircleItem } from '../../components/CircleItem/CircleItem'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
+import { Helmet } from 'react-helmet-async'
 
 export default function BlogPage() {
   const topics = [
@@ -18,6 +19,11 @@ export default function BlogPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Blog - Starot</title>
+        <meta name='description' content='Các bài viết về tarot' />
+        <link rel='canonical' href='https://starotvn.com/blog' />
+      </Helmet>
       <div className='bg-bg-blog'>
         <Header />
       </div>

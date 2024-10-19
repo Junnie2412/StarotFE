@@ -4,13 +4,16 @@ import App from './App.tsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { AdminProvider } from './context/AdminContext.tsx'
+import { HelmetProvider } from 'react-helmet-async'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
-      <AdminProvider>
-        <App />
-      </AdminProvider>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <AdminProvider>
+          <App />
+        </AdminProvider>
+      </BrowserRouter>
+    </HelmetProvider>
   </StrictMode>
 )

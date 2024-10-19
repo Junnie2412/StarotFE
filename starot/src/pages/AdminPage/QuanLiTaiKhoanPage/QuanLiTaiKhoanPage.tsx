@@ -4,6 +4,7 @@ import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios'
 import { User } from '../../../types/User.type'
+import { Helmet } from 'react-helmet-async'
 
 export default function QuanLiTaiKhoanPage() {
   const [users, setUsers] = useState<User[]>([])
@@ -96,6 +97,11 @@ export default function QuanLiTaiKhoanPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Quản Lí Tài Khoản - Starot</title>
+        <meta name='description' content='Admin Quản Lí Tài Khoản' />
+        <link rel='canonical' href='https://starotvn.com/admin/quan-li-tai-khoan' />
+      </Helmet>
       <ToastContainer
         position='top-right'
         autoClose={5000}

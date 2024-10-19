@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import HeaderAdmin from '../../../components/HeaderAdmin/HeaderAdmin'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { Helmet } from 'react-helmet-async'
 
 export default function QuanLiCuaHangPage() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -194,6 +195,11 @@ export default function QuanLiCuaHangPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Quản Lí Cửa Hàng - Starot</title>
+        <meta name='description' content='Quản Lí Cửa Hàng' />
+        <link rel='canonical' href='https://starotvn.com/admin/quan-li-cua-hang' />
+      </Helmet>
       <ToastContainer
         position='top-right'
         autoClose={5000}

@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "generate-sitemap": "node sitemap-generator.cjs",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -22,11 +23,14 @@
     "react": "^18.3.1",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
+    "react-helmet": "^6.1.0",
+    "react-helmet-async": "^2.0.5",
     "react-hook-form": "^7.53.0",
     "react-icons": "^5.3.0",
     "react-router-dom": "^6.26.2",
     "react-toastify": "^10.0.6",
     "recharts": "^2.12.7",
+    "sitemap": "^8.0.0",
     "tailwindcss": "^3.4.12",
     "uuid": "^10.0.0"
   },
@@ -35,6 +39,7 @@
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@types/react-helmet": "^6.1.11",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.1.0",
@@ -43,6 +48,7 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
     "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1"

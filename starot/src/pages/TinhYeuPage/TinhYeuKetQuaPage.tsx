@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { fetchDocumentById } from '../../apis/boiBai.api'
 import { BoiBai } from '../../types/BoiBai.type'
 import { FiArrowLeft } from 'react-icons/fi'
+import { Helmet } from 'react-helmet-async'
 
 export default function TinhYeuKetQuaPage() {
   const { id } = useParams<{ id: string }>()
@@ -40,6 +41,11 @@ export default function TinhYeuKetQuaPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Kết Quả Tình Yêu - Starot</title>
+        <meta name='description' content='Kết quả bói bài về tình yêu' />
+        <link rel='canonical' href='https://starotvn.com/tram-chua-lanh/tinh-yeu' />
+      </Helmet>
       <div
         className='bg-cover bg-no-repeat flex flex-col min-h-screen'
         style={{
