@@ -1,9 +1,15 @@
 import Footer from '../../../components/Footer'
 import Header from '../../../components/Header'
+import { Helmet } from 'react-helmet-async'
 
 export default function BlogBai3Page() {
   return (
     <>
+      <Helmet>
+        <title>Blog - Bai3 - Starot</title>
+        <meta name='description' content='CẦN CHUẨN BỊ GÌ TRƯỚC KHI XEM TAROT?' />
+        <link rel='canonical' href='https://starotvn.com/blog/bai3' />
+      </Helmet>
       <div className='bg-bg-blog'>
         <Header />
       </div>

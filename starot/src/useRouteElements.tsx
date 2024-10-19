@@ -19,7 +19,6 @@ import QuanLiCuaHangPage from './pages/AdminPage/QuanLiCuaHangPage/QuanLiCuaHang
 import QuanLiGiaoDichPage from './pages/AdminPage/QuanLiGiaoDichPage/QuanLiGiaoDichPage'
 import LichSuDichVuPage from './pages/AdminPage/QuanLiDichVuPage/LichSuDichVuPage'
 import LichSuCuaHangPage from './pages/AdminPage/QuanLiCuaHangPage/LichSuCuaHangPage'
-import { usePageTitle } from './hook/usePageTitle'
 import BlogPage from './pages/BlogsPage/Blogs'
 import BlogBai1Page from './pages/BlogsPage/BlogBai1page/BlogBai1'
 import BlogBai2Page from './pages/BlogsPage/BlogBai2Page/BlogBai2'
@@ -28,8 +27,6 @@ import BlogBai4Page from './pages/BlogsPage/BlogBai4Page/BlogBai4'
 import BlogBai5Page from './pages/BlogsPage/BlogBai5Page/BlogBai5'
 
 export default function useRouteElements() {
-  usePageTitle()
-
   const routeElements = useRoutes([
     { path: '/', element: <HomePage /> },
     { path: '/dich-vu', element: <DichVuPage /> },

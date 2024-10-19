@@ -3,6 +3,7 @@ import Footer from '../../components/Footer'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { fetchSucKhoeDocuments } from '../../apis/boiBai.api'
+import { Helmet } from 'react-helmet-async'
 
 interface GridItem {
   id: string
@@ -29,6 +30,11 @@ export default function SucKhoePage() {
 
   return (
     <>
+      <Helmet>
+        <title>Sức Khỏe - Starot</title>
+        <meta name='description' content='Bói bài về sức khỏe' />
+        <link rel='canonical' href='https://starotvn.com/tram-chua-lanh/suc-khoe' />
+      </Helmet>
       <div
         className='bg-cover bg-no-repeat flex flex-col min-h-screen'
         style={{

@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import { Helmet } from 'react-helmet-async'
 
 export default function HomePage() {
   return (
     <>
+      <Helmet>
+        <title>Home - Starot</title>
+        <meta name='description' content='Trang Chủ cung cấp thông tin dịch vụ' />
+        <link rel='canonical' href='https://starotvn.com' />
+      </Helmet>
       <div
         className='bg-cover bg-no-repeat'
         style={{

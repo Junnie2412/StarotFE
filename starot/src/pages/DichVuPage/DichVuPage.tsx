@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
+import { Helmet } from 'react-helmet-async'
 
 interface ServiceImage {
   src: string
@@ -42,6 +43,11 @@ export default function DichVuPage() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   return (
     <>
+      <Helmet>
+        <title>Dịch Vụ - Starot</title>
+        <meta name='description' content='Thông tin về các dịch vụ' />
+        <link rel='canonical' href='https://starotvn.com/dich-vu' />
+      </Helmet>
       <div
         className='bg-cover bg-no-repeat'
         style={{

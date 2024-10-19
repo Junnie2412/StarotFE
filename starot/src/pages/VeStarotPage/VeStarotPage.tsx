@@ -1,11 +1,17 @@
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
+import { Helmet } from 'react-helmet-async'
 
 export default function VeStarotPage() {
   return (
     <>
+      <Helmet>
+        <title>Về Starot - Starot</title>
+        <meta name='description' content='Về Starot' />
+        <link rel='canonical' href='https://starotvn.com/ve-starot' />
+      </Helmet>
       <div
-        className='bg-cover bg-no-repeat flex flex-col min-h-screen' // Added flex and min-h-screen
+        className='bg-cover bg-no-repeat flex flex-col min-h-screen'
         style={{
           backgroundImage:
             "url('https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FLienHeBG.png?alt=media&token=de7de1d4-a5d0-4b54-9ebc-499de1950d15')",

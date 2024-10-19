@@ -1,9 +1,15 @@
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
+import { Helmet } from 'react-helmet-async'
 
 export default function LienHePage() {
   return (
     <>
+      <Helmet>
+        <title>Liên Hệ - Starot</title>
+        <meta name='description' content='Liên hệ của Starot' />
+        <link rel='canonical' href='https://starotvn.com/lien-he' />
+      </Helmet>
       <div
         className='bg-cover bg-no-repeat flex flex-col min-h-screen'
         style={{

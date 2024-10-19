@@ -3,6 +3,7 @@ import Footer from '../../components/Footer'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { fetchTinhYeuDocuments } from '../../apis/boiBai.api'
+import { Helmet } from 'react-helmet-async'
 
 interface GridItem {
   id: string
@@ -29,6 +30,11 @@ export default function TinhYeuPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Tình Yêu - Starot</title>
+        <meta name='description' content='Bói bài về tình yêu' />
+        <link rel='canonical' href='https://starotvn.com/tram-chua-lanh/tinh-yeu' />
+      </Helmet>
       <div
         className='bg-cover bg-no-repeat flex flex-col min-h-screen'
         style={{
