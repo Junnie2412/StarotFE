@@ -1,120 +1,24 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import HeaderAdmin from '../../../components/HeaderAdmin/HeaderAdmin'
 import { Helmet } from 'react-helmet-async'
+import { Booking } from '../../../types/Booking.type'
+import axios from 'axios'
 
 export default function LichSuDichVuPage() {
-  const transactions = [
-    {
-      id: '#15270',
-      date: '16/06/2024',
-      service: 'Gói trải bài tổng quan tuần',
-      amount: '150,000 VND',
-      user: 'Khang',
-      email: 'user1@gmail.com',
-      sex: 'Male',
-      role: 'Khách hàng',
-      status: 'Hủy giao dịch'
-    },
-    {
-      id: '#15271',
-      date: '16/06/2024',
-      service: 'Gói trải bài tổng quan năm',
-      amount: '100,000 VND',
-      user: 'Kiên',
-      email: 'user2@gmail.com',
-      sex: 'Male',
-      role: 'Reader',
-      status: 'Thành công'
-    },
-    {
-      id: '#15272',
-      date: '8/06/2024',
-      service: 'Gói trải bài tổng quan tháng',
-      amount: '300,000 VND',
-      user: 'Phước',
-      email: 'user3@gmail.com',
-      sex: 'Female',
-      role: 'Khách hàng',
-      status: 'Thành công'
-    },
-    {
-      id: '#15273',
-      date: '16/06/2024',
-      service: 'Gói trải bài tổng quan năm',
-      amount: '400,000 VND',
-      user: 'Nam',
-      email: 'user4@gmail.com',
-      sex: 'Male',
-      role: 'Khách hàng',
-      status: 'Thành công'
-    },
-    {
-      id: '#15274',
-      date: '16/06/2024',
-      service: 'Gói trải bài tổng quan năm',
-      amount: '150,000 VND',
-      user: 'Hải',
-      email: 'user5@gmail.com',
-      sex: 'Female',
-      role: 'Reader',
-      status: 'Thành công'
-    },
-    {
-      id: '#15275',
-      date: '16/06/2024',
-      service: 'Gói trải bài theo câu hỏi đơn',
-      amount: '80,000 VND',
-      user: 'Nhu',
-      email: 'user6@gmail.com',
-      sex: 'Female',
-      role: 'Khách hàng',
-      status: 'Thành công'
-    },
-    {
-      id: '#15276',
-      date: '16/06/2024',
-      service: 'Gói trải bài tổng quan tuần',
-      amount: '150,000 VND',
-      user: 'Thảo',
-      email: 'user7@gmail.com',
-      sex: 'Male',
-      role: 'Khách hàng',
-      status: 'Thành công'
-    },
-    {
-      id: '#15277',
-      date: '16/06/2024',
-      service: 'Gói trải bài tổng quan tháng',
-      amount: '200,000 VND',
-      user: 'Vũ',
-      email: 'user8@gmail.com',
-      sex: 'Male',
-      role: 'Reader',
-      status: 'Hủy giao dịch'
-    },
-    {
-      id: '#15278',
-      date: '16/06/2024',
-      service: 'Gói trải bài tổng quan năm',
-      amount: '110,000 VND',
-      user: 'Tâm',
-      email: 'user9@gmail.com',
-      sex: 'Male',
-      role: 'Khách hàng',
-      status: 'Hủy giao dịch'
-    },
-    {
-      id: '#15279',
-      date: '16/06/2024',
-      service: 'Gói trải bài tổng quan tháng',
-      amount: '200,000 VND',
-      user: 'Lài',
-      email: 'user10@gmail.com',
-      sex: 'Male',
-      role: 'Khách hàng',
-      status: 'Thành công'
+  const [transactions, setTransactions] = useState<Booking[]>([])
+
+  useEffect(() => {
+    const fetchTransactions = async () => {
+      try {
+        const response = await axios.get('https://exestarotapi20241021202520.azurewebsites.net/api/v1/booking')
+        setTransactions(response.data.data)
+      } catch (error) {
+        console.error('Error fetching user data:', error)
+      }
     }
-  ]
+
+    fetchTransactions()
+  }, [])
 
   const [searchTerm, setSearchTerm] = useState('')
 
@@ -202,19 +106,7 @@ export default function LichSuDichVuPage() {
                       scope='col'
                       className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                     >
-                      Email
-                    </th>
-                    <th
-                      scope='col'
-                      className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
-                    >
-                      Giới Tính
-                    </th>
-                    <th
-                      scope='col'
-                      className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
-                    >
-                      Vai Trò
+                      Tên Reader
                     </th>
                     <th
                       scope='col'
@@ -231,9 +123,9 @@ export default function LichSuDichVuPage() {
                       <td className='px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900'>
                         {transaction.id}
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>12:00</td>
+                      <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>{transaction.startHour}</td>
                       <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>{transaction.date}</td>
-                      <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-900'>{transaction.service}</td>
+                      <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-900'>{transaction.packageName}</td>
                       <td className='px-6 py-4 whitespace-nowrap'>
                         <div className='flex items-center'>
                           <div className='flex-shrink-0 h-10 w-10'>
@@ -244,30 +136,11 @@ export default function LichSuDichVuPage() {
                             />
                           </div>
                           <div className='ml-4'>
-                            <div className='text-sm font-medium text-gray-900'>{transaction.user}</div>
+                            <div className='text-sm font-medium text-gray-900'>{transaction.customerName}</div>
                           </div>
                         </div>
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>{transaction.email}</td>
-                      <td className='px-6 py-4 whitespace-nowrap'>
-                        <span
-                          className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                            transaction.sex === 'Female' ? 'bg-red-700 text-white' : 'bg-blue text-white'
-                          }`}
-                        >
-                          {transaction.sex}
-                        </span>
-                      </td>
-                      <td className='px-6 py-4 whitespace-nowrap'>
-                        <span
-                          className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full
-                      ${transaction.role === 'Admin' ? 'border border-blue text-blue-500' : ''}
-                      ${transaction.role === 'Khách hàng' ? 'border border-green-500 text-green-500' : ''}
-                      ${transaction.role === 'Reader' ? 'border border-pink-500 text-pink-500' : ''}`}
-                        >
-                          {transaction.role}
-                        </span>
-                      </td>
+                      <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>{transaction.readerName}</td>
                       <td className='px-6 py-4 whitespace-nowrap'>
                         <span
                           className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${

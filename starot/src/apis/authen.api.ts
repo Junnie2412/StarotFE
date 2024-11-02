@@ -8,7 +8,7 @@ export interface LoginResponse {
 }
 
 export async function login(email: string, password: string): Promise<LoginResponse | null> {
-  const apiUrl = 'https://exestarotapi20241007212754.azurewebsites.net/api/auth/login'
+  const apiUrl = 'https://exestarotapi20241021202520.azurewebsites.net/api/auth/login'
 
   try {
     const response = await fetch(apiUrl, {
