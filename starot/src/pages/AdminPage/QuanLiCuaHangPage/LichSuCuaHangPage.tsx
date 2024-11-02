@@ -1,110 +1,24 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import HeaderAdmin from '../../../components/HeaderAdmin/HeaderAdmin'
 import { Helmet } from 'react-helmet-async'
+import { Order } from '../../../types/Order.type'
+import axios from 'axios'
 
 export default function LichSuCuaHangPage() {
-  const transactions = [
-    {
-      id: '#15270',
-      date: '16/06/2024',
-      service: 'Red Jasper x1 Aquamarine x1',
-      amount: '150,000 VND',
-      user: 'Khang',
-      email: 'user1@gmail.com',
-      payment: 'Tiền Mặt',
-      status: 'Hủy giao dịch'
-    },
-    {
-      id: '#15271',
-      date: '16/06/2024',
-      service: 'Red Jasper x1 Aquamarine x1',
-      amount: '100,000 VND',
-      user: 'Kiên',
-      email: 'user2@gmail.com',
-      payment: 'Tiền Mặt',
-      status: 'Thành công'
-    },
-    {
-      id: '#15272',
-      date: '8/06/2024',
-      service: 'Red Jasper x1 Aquamarine x1',
-      amount: '300,000 VND',
-      user: 'Phước',
-      email: 'user3@gmail.com',
-      payment: 'Chuyển Khoản',
-      status: 'Thành công'
-    },
-    {
-      id: '#15273',
-      date: '16/06/2024',
-      service: 'Red Jasper x1 Aquamarine x1',
-      amount: '400,000 VND',
-      user: 'Nam',
-      payment: 'Chuyển Khoản',
-      email: 'user3@gmail.com',
-      status: 'Thành công'
-    },
-    {
-      id: '#15274',
-      date: '16/06/2024',
-      service: 'Red Jasper x1 Aquamarine x1',
-      amount: '150,000 VND',
-      user: 'Hải',
-      email: 'user5@gmail.com',
-      payment: 'Tiền Mặt',
-      status: 'Thành công'
-    },
-    {
-      id: '#15275',
-      date: '16/06/2024',
-      service: 'Red Jasper x1 Aquamarine x1',
-      amount: '80,000 VND',
-      user: 'Nhu',
-      email: 'user6@gmail.com',
-      payment: 'Tiền Mặt',
-      status: 'Thành công'
-    },
-    {
-      id: '#15276',
-      date: '16/06/2024',
-      service: 'Red Jasper x1 Aquamarine x1',
-      amount: '150,000 VND',
-      user: 'Thảo',
-      email: 'user7@gmail.com',
-      payment: 'Tiền Mặt',
-      status: 'Thành công'
-    },
-    {
-      id: '#15277',
-      date: '16/06/2024',
-      service: 'Red Jasper x1 Aquamarine x1',
-      amount: '200,000 VND',
-      user: 'Vũ',
-      email: 'user8@gmail.com',
-      payment: 'Tiền Mặt',
-      status: 'Hủy giao dịch'
-    },
-    {
-      id: '#15278',
-      date: '16/06/2024',
-      service: 'Red Jasper x1 Aquamarine x1',
-      amount: '110,000 VND',
-      user: 'Tâm',
-      email: 'user9@gmail.com',
-      payment: 'Chuyển Khoản',
-      status: 'Hủy giao dịch'
-    },
-    {
-      id: '#15279',
-      date: '16/06/2024',
-      service: 'Red Jasper x1 Aquamarine x1',
-      amount: '200,000 VND',
-      user: 'Lài',
-      email: 'user10@gmail.com',
-      payment: 'Chuyển Khoản',
-      status: 'Thành công'
+  const [transactions, setTransactions] = useState<Order[]>([])
+
+  useEffect(() => {
+    const fetchTransactions = async () => {
+      try {
+        const response = await axios.get('https://exestarotapi20241021202520.azurewebsites.net/api/v1/orders')
+        setTransactions(response.data.data)
+      } catch (error) {
+        console.error('Error fetching user data:', error)
+      }
     }
-  ]
+
+    fetchTransactions()
+  }, [])
 
   const [searchTerm, setSearchTerm] = useState('')
 
@@ -192,7 +106,7 @@ export default function LichSuCuaHangPage() {
                       scope='col'
                       className='px-6 py-3 text-left text-xs font-medium text-blue uppercase tracking-wider'
                     >
-                      Email
+                      Phone
                     </th>
                     <th
                       scope='col'
@@ -215,9 +129,15 @@ export default function LichSuCuaHangPage() {
                       <td className='px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900'>
                         {transaction.id}
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>12:00</td>
-                      <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>{transaction.date}</td>
-                      <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-900'>{transaction.service}</td>
+                      <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>{transaction.orderTime}</td>
+                      <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>{transaction.orderDate}</td>
+                      <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-900'>
+                        {transaction.products.map((product) => (
+                          <span className='mr-2'>
+                            {product.name} x {product.amount}
+                          </span>
+                        ))}
+                      </td>
                       <td className='px-6 py-4 whitespace-nowrap'>
                         <div className='flex items-center'>
                           <div className='flex-shrink-0 h-10 w-10'>
@@ -228,18 +148,20 @@ export default function LichSuCuaHangPage() {
                             />
                           </div>
                           <div className='ml-4'>
-                            <div className='text-sm font-medium text-gray-900'>{transaction.user}</div>
+                            <div className='text-sm font-medium text-gray-900'>{transaction.userName}</div>
                           </div>
                         </div>
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>{transaction.email}</td>
+                      <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>{transaction.phone}</td>
                       <td className='px-6 py-4 whitespace-nowrap'>
                         <span
                           className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                            transaction.payment === 'Tiền Mặt' ? 'border-green-600 border' : 'border-red-600 border'
+                            transaction.paymentMethod === 'Tiền Mặt'
+                              ? 'border-green-600 border'
+                              : 'border-red-600 border'
                           }`}
                         >
-                          {transaction.payment}
+                          {transaction.paymentMethod}
                         </span>
                       </td>
                       <td className='px-6 py-4 whitespace-nowrap'>

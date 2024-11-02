@@ -27,7 +27,7 @@ export default function AdminLoginPage() {
         localStorage.setItem('token', token)
         localStorage.setItem('refreshToken', refreshToken)
 
-        const userResponse = await axios.get('https://exestarotapi20241007212754.azurewebsites.net/api/v1/user/info', {
+        const userResponse = await axios.get('https://exestarotapi20241021202520.azurewebsites.net/api/v1/user/info', {
           headers: {
             Authorization: `Bearer ${token}`
           }

@@ -12,7 +12,7 @@ export default function QuanLiTaiKhoanPage() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('https://exestarotapi20241007212754.azurewebsites.net/api/v1/user')
+        const response = await axios.get('https://exestarotapi20241021202520.azurewebsites.net/api/v1/user')
         setUsers(response.data.data)
       } catch (error) {
         console.error('Error fetching user data:', error)
@@ -25,7 +25,6 @@ export default function QuanLiTaiKhoanPage() {
   const [searchTerm, setSearchTerm] = useState('')
   const [sortOrder, setSortOrder] = useState('Mới nhất')
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-  const [editModalOpen, setEditModalOpen] = useState(false)
   const [deleteModalOpen, setDeleteModalOpen] = useState(false)
   const [currentUser, setCurrentUser] = useState<(typeof users)[0] | null>(null)
 
@@ -39,39 +38,17 @@ export default function QuanLiTaiKhoanPage() {
     setActiveDropdown(activeDropdown === id ? null : id)
   }
 
-  const handleEditUser = (user: (typeof users)[0]) => {
-    setCurrentUser(user)
-    setEditModalOpen(true)
-    setActiveDropdown(null)
-  }
-
   const handleDeleteUser = (user: (typeof users)[0]) => {
     setCurrentUser(user)
     setDeleteModalOpen(true)
     setActiveDropdown(null)
   }
 
-  const confirmEdit = () => {
-    if (currentUser) {
-      const updatedUsers = users.map((user) => (user.id === currentUser.id ? currentUser : user))
-      if (updatedUsers) {
-        setUsers(updatedUsers)
-        setEditModalOpen(false)
-        setCurrentUser(null)
-        toast.success('User updated successfully!')
-      } else {
-        toast.error('Failed to update user information.')
-      }
-    } else {
-      toast.error('No user selected for editing.')
-    }
-  }
-
   const confirmDelete = async () => {
     if (currentUser) {
       try {
         const response = await fetch(
-          `https://exestarotapi20241007212754.azurewebsites.net/api/v1/user/${currentUser.id}`,
+          `https://exestarotapi20241021202520.azurewebsites.net/api/v1/user/${currentUser.id}`,
           {
             method: 'DELETE'
           }
@@ -94,6 +71,18 @@ export default function QuanLiTaiKhoanPage() {
       toast.error('No user selected for deletion.')
     }
   }
+
+  const sortedUsers = filteredUsers.sort((a, b) => {
+    const dateA = a.dateOfBirth ? new Date(a.dateOfBirth).getTime() : -Infinity // Treat users without a date of birth as the oldest
+    const dateB = b.dateOfBirth ? new Date(b.dateOfBirth).getTime() : -Infinity
+
+    if (sortOrder === 'Mới nhất') {
+      return dateB - dateA // Newest first
+    } else {
+      // Cũ nhất
+      return dateA - dateB // Oldest first
+    }
+  })
 
   return (
     <>
@@ -187,17 +176,13 @@ export default function QuanLiTaiKhoanPage() {
                 </tr>
               </thead>
               <tbody className='divide-y divide-gray-200'>
-                {filteredUsers.map((user) => (
+                {sortedUsers.map((user) => (
                   <tr key={user.id}>
                     <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>{user.id}</td>
                     <td className='px-6 py-4 whitespace-nowrap'>
                       <div className='flex items-center'>
                         <div className='flex-shrink-0 h-10 w-10'>
-                          <img
-                            className='h-10 w-10 rounded-full'
-                            src='https://cdn.lazi.vn/storage/uploads/users/avatar/1657860236_lazi_540871.jpg'
-                            alt=''
-                          />
+                          <img className='h-10 w-10 rounded-full' src={user.image} alt='' />
                         </div>
                         <div className='ml-4'>
                           <div className='text-sm font-medium text-gray-900'>
@@ -237,12 +222,6 @@ export default function QuanLiTaiKhoanPage() {
                         {activeDropdown === user.id && (
                           <div className='absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10 border border-gray-200'>
                             <button
-                              className='block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
-                              onClick={() => handleEditUser(user)}
-                            >
-                              Edit
-                            </button>
-                            <button
                               className='block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100'
                               onClick={() => handleDeleteUser(user)}
                             >
@@ -258,107 +237,6 @@ export default function QuanLiTaiKhoanPage() {
             </table>
           </div>
         </main>
-
-        {editModalOpen && currentUser && (
-          <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
-            <div className='bg-white p-6 rounded-lg shadow-xl w-96'>
-              <h2 className='text-xl font-bold mb-4'>Edit User</h2>
-              <div className='space-y-4'>
-                <div>
-                  <label htmlFor='name' className='block text-sm font-medium text-gray-700 mb-1'>
-                    Name
-                  </label>
-                  <input
-                    id='name'
-                    type='text'
-                    value={currentUser.firstName}
-                    onChange={(e) => setCurrentUser({ ...currentUser, firstName: e.target.value })}
-                    className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500'
-                  />
-                </div>
-                <div>
-                  <label htmlFor='email' className='block text-sm font-medium text-gray-700 mb-1'>
-                    Email
-                  </label>
-                  <input
-                    id='email'
-                    type='email'
-                    value={currentUser.email}
-                    onChange={(e) => setCurrentUser({ ...currentUser, email: e.target.value })}
-                    className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500'
-                  />
-                </div>
-                <div>
-                  <label htmlFor='phone' className='block text-sm font-medium text-gray-700 mb-1'>
-                    Phone
-                  </label>
-                  <input
-                    id='phone'
-                    type='tel'
-                    value={currentUser.phone}
-                    onChange={(e) => setCurrentUser({ ...currentUser, phone: e.target.value })}
-                    className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500'
-                  />
-                </div>
-                <div>
-                  <label htmlFor='dob' className='block text-sm font-medium text-gray-700 mb-1'>
-                    Date of Birth
-                  </label>
-                  <input
-                    id='dob'
-                    type='date'
-                    value={currentUser.dateOfBirth}
-                    onChange={(e) => setCurrentUser({ ...currentUser, dateOfBirth: e.target.value })}
-                    className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500'
-                  />
-                </div>
-                <div>
-                  <label htmlFor='gender' className='block text-sm font-medium text-gray-700 mb-1'>
-                    Gender
-                  </label>
-                  <select
-                    id='gender'
-                    value={currentUser.gender}
-                    onChange={(e) => setCurrentUser({ ...currentUser, gender: e.target.value })}
-                    className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500'
-                  >
-                    <option value='Male'>Male</option>
-                    <option value='Female'>Female</option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor='role' className='block text-sm font-medium text-gray-700 mb-1'>
-                    Role
-                  </label>
-                  <select
-                    id='role'
-                    value={currentUser.role}
-                    onChange={(e) => setCurrentUser({ ...currentUser, role: e.target.value })}
-                    className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500'
-                  >
-                    <option value='Admin'>Admin</option>
-                    <option value='Customer'>Customer</option>
-                    <option value='Reader'>Reader</option>
-                  </select>
-                </div>
-              </div>
-              <div className='mt-6 flex justify-end space-x-2'>
-                <button
-                  onClick={() => setEditModalOpen(false)}
-                  className='px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500'
-                >
-                  Cancel
-                </button>
-                <button
-                  onClick={confirmEdit}
-                  className='px-4 py-2  bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500'
-                >
-                  Save changes
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
 
         {deleteModalOpen && (
           <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
