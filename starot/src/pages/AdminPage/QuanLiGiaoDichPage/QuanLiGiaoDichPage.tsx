@@ -48,7 +48,7 @@ export default function QuanLiGiaoDichPage() {
       amount: '200.000 VND',
       user: 'Duy Tín',
       image: `https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FUSER'S%20AVT%20STAROT.jpg?alt=media&token=12a57b72-3c66-4f4e-9763-ad85503c0f2f`,
-      email: 'huuthai1911@gmail.com',
+      email: 'tinbusiness.work@gmail.com',
       status: 'Thành công',
       result: 'Chuyển khoản'
     },
