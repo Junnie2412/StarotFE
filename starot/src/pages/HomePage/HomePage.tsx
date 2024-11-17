@@ -39,13 +39,13 @@ export default function HomePage() {
               <p className='text-blue-light mb-6 text-center' style={{ fontSize: 15 }}>
                 Tải ứng dụng để tận hưởng những trải nghiệm thú vị hơn!
               </p>
-              <div className='text-center'>
-                <button className='border mb-5 border-blue text-blue rounded px-4 py-2 hover:bg-blue hover:text-white mr-4'>
-                  <Link to='#'>DOWNLOAD IOS</Link>
-                </button>
-                <button className='border border-blue text-blue rounded px-4 py-2 hover:bg-blue hover:text-white'>
-                  <Link to='#'>DOWNLOAD ANDROID</Link>
-                </button>
+              <div className='flex justify-center'>
+                <img
+                  src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2Fz6041630607425_3009c614d83e1fe4fbf3c4f861bb172f.jpg?alt=media&token=7bbaaabb-ec4f-4535-bffe-a48bbafcb75c'
+                  alt='Featured Image'
+                  width={200}
+                  height={200}
+                />
               </div>
             </div>
           </div>
