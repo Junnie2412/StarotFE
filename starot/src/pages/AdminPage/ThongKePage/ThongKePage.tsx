@@ -8,18 +8,18 @@ ChartJS.register(ArcElement, Tooltip, Legend)
 
 const ThongKePage = () => {
   const data = [
-    { month: '01', value: 600000 },
-    { month: '02', value: 1500000 },
-    { month: '03', value: 1800000 },
-    { month: '04', value: 1600000 },
-    { month: '05', value: 800000 },
-    { month: '06', value: 1400000 },
-    { month: '07', value: 1200000 },
-    { month: '08', value: 1600000 },
-    { month: '09', value: 1800000 },
-    { month: '10', value: 1400000 },
-    { month: '11', value: 1600000 },
-    { month: '12', value: 2000000 }
+    { month: '01', value: 0 },
+    { month: '02', value: 0 },
+    { month: '03', value: 0 },
+    { month: '04', value: 0 },
+    { month: '05', value: 0 },
+    { month: '06', value: 0 },
+    { month: '07', value: 0 },
+    { month: '08', value: 0 },
+    { month: '09', value: 0 },
+    { month: '10', value: 0 },
+    { month: '11', value: 6920000 },
+    { month: '12', value: 0 }
   ]
 
   const chartData = {
@@ -34,7 +34,7 @@ const ThongKePage = () => {
     ],
     datasets: [
       {
-        data: [24, 28, 9, 21, 18, 18, 18],
+        data: [22, 26, 7, 15, 11, 11, 7],
         backgroundColor: ['#FF4960', '#EDEF78', '#717DCC', '#5EE073', '#3A83F0', '#EF3CD2', '#FFB038'],
         hoverBackgroundColor: ['#FF4960', '#EDEF78', '#717DCC', '#5EE073', '#3A83F0', '#EF3CD2', '#FFB038']
       }
@@ -45,7 +45,7 @@ const ThongKePage = () => {
     labels: ['Red Jasper', 'Amethyst', 'Aquamarine', 'Citrine', 'Clear Quartz', 'Moonstone', 'Rhodochrosite', 'Amber'],
     datasets: [
       {
-        data: [15, 10, 20, 10, 10, 15, 10, 10],
+        data: [5, 5, 10, 15, 5, 15, 25, 2],
         backgroundColor: ['#FF4960', '#EDEF78', '#717DCC', '#5EE073', '#3A83F0', '#EF3CD2', '#FFB038', '#37EDC9'],
         hoverBackgroundColor: ['#FF4960', '#EDEF78', '#717DCC', '#5EE073', '#3A83F0', '#EF3CD2', '#FFB038', '#37EDC9']
       }
