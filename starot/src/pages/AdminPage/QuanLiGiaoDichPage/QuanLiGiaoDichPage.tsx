@@ -125,7 +125,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS743',
       time: '18:45',
       date: '13/11/2024',
       service: 'Amber x4',
@@ -137,7 +137,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS744',
       time: '19:47',
       date: '13/11/2024',
       service: 'Amethyst x1',
@@ -149,7 +149,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS745',
       time: '20:53',
       date: '13/11/2024',
       service: 'Gói trải bài tổng quan quý',
@@ -161,7 +161,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS746',
       time: '18:27',
       date: '14/11/2024',
       service: 'Gói trải bài tổng quan 6 tháng',
@@ -173,7 +173,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS747',
       time: '18:34',
       date: '14/11/2024',
       service: 'Gói trải bài tổng quan tuần',
@@ -185,7 +185,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS748',
       time: '18:53',
       date: '14/11/2024',
       service: 'Gói trải bài theo chủ đề',
@@ -197,7 +197,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS749',
       time: '20:22',
       date: '14/11/2024',
       service: 'Gói trải bài theo câu hỏi đơn',
@@ -209,7 +209,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS750',
       time: '20:36',
       date: '14/11/2024',
       service: 'Gói trải bài theo chủ đề',
@@ -221,7 +221,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS751',
       time: '21:12',
       date: '14/11/2024',
       service: 'Gói trải bài theo chủ đề',
@@ -233,7 +233,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS752',
       time: '21:43',
       date: '14/11/2024',
       service: 'Gói trải bài theo chủ đề',
@@ -245,7 +245,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS753',
       time: '22:37',
       date: '14/11/2024',
       service: 'Gói trải bài tổng quan tháng',
@@ -257,7 +257,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS754',
       time: '17:53',
       date: '15/11/2024',
       service: 'Gói trải bài theo câu hỏi đơn',
@@ -269,7 +269,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS755',
       time: '18:02',
       date: '15/11/2024',
       service: 'Gói trải bài tổng quan năm',
@@ -281,7 +281,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS756',
       time: '18:14',
       date: '15/11/2024',
       service: 'Gói trải bài theo câu hỏi đơn',
@@ -293,7 +293,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS757',
       time: '18:49',
       date: '15/11/2024',
       service: 'Gói trải bài tổng quan tháng',
@@ -305,7 +305,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS758',
       time: '19:34',
       date: '15/11/2024',
       service: 'Gói trải bài theo câu hỏi đơn',
@@ -317,7 +317,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS759',
       time: '20:12',
       date: '15/11/2024',
       service: 'Gói trải bài tổng quan quý',
@@ -329,7 +329,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS760',
       time: '20:33',
       date: '15/11/2024',
       service: 'Gói trải bài theo câu hỏi đơn',
@@ -341,7 +341,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS761',
       time: '21:24',
       date: '15/11/2024',
       service: 'Gói trải bài tổng quan 6 tháng',
@@ -353,7 +353,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS762',
       time: '21:38',
       date: '15/11/2024',
       service: 'Gói trải bài tổng quan năm',
@@ -365,7 +365,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS763',
       time: '22:03',
       date: '15/11/2024',
       service: 'Gói trải bài tổng quan quý',
@@ -377,7 +377,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS764',
       time: '22:36',
       date: '15/11/2024',
       service: 'Gói trải bài tổng quan tháng',
@@ -389,7 +389,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS765',
       time: '23:09',
       date: '15/11/2024',
       service: 'Gói trải bài theo chủ đề',
@@ -401,7 +401,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS766',
       time: '23:21',
       date: '15/11/2024',
       service: 'Gói trải bài tổng quan 6 tháng',
@@ -413,7 +413,7 @@ export default function QuanLiGiaoDichPage() {
       result: 'Chuyển khoản'
     },
     {
-      id: 'TRANS742',
+      id: 'TRANS767',
       time: '23:44',
       date: '15/11/2024',
       service: 'Gói trải bài theo chủ đề',
