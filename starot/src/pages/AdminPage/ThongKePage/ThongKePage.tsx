@@ -78,7 +78,7 @@ const ThongKePage = () => {
               <div className='flex flex-col md:flex-row justify-between items-center mb-6'>
                 <h1 className='text-lg md:text-2xl font-bold text-blue mb-4 md:mb-0'>THỐNG KÊ DỊCH VỤ</h1>
                 <div className='flex space-x-2'>
-                  <select className='text-blue border rounded px-2 py-1'>
+                  <select className='text-blue border rounded px-2 py-1' defaultValue='11'>
                     <option value='1'>January</option>
                     <option value='2'>February</option>
                     <option value='3'>March</option>
@@ -92,7 +92,7 @@ const ThongKePage = () => {
                     <option value='11'>November</option>
                     <option value='12'>December</option>
                   </select>
-                  <select className='text-blue border rounded px-2 py-1 border-blue'>
+                  <select className='text-blue border rounded px-2 py-1 border-blue' defaultValue='2024'>
                     <option>2023</option>
                     <option>2024</option>
                     <option>2025</option>
@@ -125,7 +125,7 @@ const ThongKePage = () => {
               <div className='flex flex-col md:flex-row justify-between items-center mb-6'>
                 <h1 className='text-lg md:text-2xl font-bold text-blue mb-4 md:mb-0'>THỐNG KÊ CỬA HÀNG</h1>
                 <div className='flex space-x-2'>
-                  <select className='text-blue border rounded px-2 py-1'>
+                  <select className='text-blue border rounded px-2 py-1' defaultValue='11'>
                     <option value='1'>January</option>
                     <option value='2'>February</option>
                     <option value='3'>March</option>
@@ -139,7 +139,7 @@ const ThongKePage = () => {
                     <option value='11'>November</option>
                     <option value='12'>December</option>
                   </select>
-                  <select className='text-blue border rounded px-2 py-1 border-blue'>
+                  <select className='text-blue border rounded px-2 py-1 border-blue' defaultValue='2024'>
                     <option>2023</option>
                     <option>2024</option>
                     <option>2025</option>
@@ -174,7 +174,7 @@ const ThongKePage = () => {
                   <h2 className='text-2xl font-bold text-blue'>TỔNG QUAN TÀI CHÍNH</h2>
                 </div>
                 <div className='flex space-x-2'>
-                  <select className='text-blue border rounded px-2 py-1 border-blue'>
+                  <select className='text-blue border rounded px-2 py-1 border-blue' defaultValue='2024'>
                     <option>2023</option>
                     <option>2024</option>
                     <option>2025</option>

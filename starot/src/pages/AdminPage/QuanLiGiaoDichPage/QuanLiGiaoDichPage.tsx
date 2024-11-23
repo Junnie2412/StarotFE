@@ -423,6 +423,18 @@ export default function QuanLiGiaoDichPage() {
       email: 'minhduc02@gmail.com',
       status: 'Thành công',
       result: 'Chuyển khoản'
+    },
+    {
+      id: 'TRANS768',
+      time: '11:25',
+      date: '23/11/2024',
+      service: 'Gói trải bài theo câu hỏi đơn',
+      amount: '80.000 VND',
+      user: 'Hoàng Dung',
+      image: `https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2FUSER'S%20AVT%20STAROT.jpg?alt=media&token=12a57b72-3c66-4f4e-9763-ad85503c0f2f`,
+      email: 'dungchan321@gmail.com',
+      status: 'Thành công',
+      result: 'Chuyển khoản'
     }
   ]
 
