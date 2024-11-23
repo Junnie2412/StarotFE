@@ -41,7 +41,7 @@ export default function HomePage() {
               </p>
               <div className='flex justify-center'>
                 <img
-                  src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/DefaultImages%2Fz6041630607425_3009c614d83e1fe4fbf3c4f861bb172f.jpg?alt=media&token=7bbaaabb-ec4f-4535-bffe-a48bbafcb75c'
+                  src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/z6060878426315_f5148dd8266c7aed6dbef9dac0c81d97.jpg?alt=media&token=7194c8f7-3e0a-492f-b04e-6aad7a02a93d'
                   alt='Featured Image'
                   width={200}
                   height={200}
@@ -126,13 +126,13 @@ export default function HomePage() {
               <p className='text-blue-light mb-6 text-center' style={{ fontSize: 15 }}>
                 Truy cập ứng dụng Starot để trải nghiệm các dịch vụ đầy đủ nhất!
               </p>
-              <div className='space-x-4 text-center'>
-                <button className='border mb-5 border-blue text-blue rounded px-4 py-2 hover:bg-blue hover:text-white'>
-                  <Link to='#'>DOWNLOAD IOS</Link>
-                </button>
-                <button className='border border-blue text-blue rounded px-4 py-2 hover:bg-blue hover:text-white'>
-                  <Link to='#'>DOWNLOAD ANDROID</Link>
-                </button>
+              <div className='flex justify-center'>
+                <img
+                  src='https://firebasestorage.googleapis.com/v0/b/starot-aa9da.appspot.com/o/z6060878426315_f5148dd8266c7aed6dbef9dac0c81d97.jpg?alt=media&token=7194c8f7-3e0a-492f-b04e-6aad7a02a93d'
+                  alt='Featured Image'
+                  width={200}
+                  height={200}
+                />
               </div>
             </div>
           </div>
